@@ -57,6 +57,8 @@
   };
 
   # Desktop environment and display manager settings
+
+  # Gnome
   services.xserver = {
     enable = true;
     displayManager.gdm = {

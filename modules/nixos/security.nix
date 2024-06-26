@@ -9,7 +9,6 @@
 
 {
   security.pam.services.login.fprintAuth = false;
-  security.pam.services.gdm.enableGnomeKeyring = true;
 
   security.pam.services.gdm-fingerprint = lib.mkIf (config.services.fprintd.enable) {
     text = ''

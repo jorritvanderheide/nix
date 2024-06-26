@@ -29,7 +29,7 @@
     };
 
     "org/gnome/desktop/screensaver" = {
-      lock-enabled = false;
+      # lock-enabled = false;
     };
 
     "org/gnome/desktop/session" = {
