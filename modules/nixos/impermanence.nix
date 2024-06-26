@@ -23,7 +23,6 @@
     ];
     files = [
       "/etc/machine-id"
-      "/etc/pam.d/gdm-fingerprint"
       "/var/lib/alsa/asound.state"
       "/var/lib/cups/printers.conf"
     ];
