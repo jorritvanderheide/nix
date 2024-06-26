@@ -29,4 +29,4 @@
       session    optional                    ${pkgs.gnome.gnome-keyring}/lib/security/pam_gnome_keyring.so auto_start
     '';
   };
-};
+}
