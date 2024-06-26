@@ -16,7 +16,7 @@
   home.persistence."/persist/home/jorrit" = {
     allowOther = true;
     directories = [
-      ".config/chromium" # TODO make this configurable
+      ".config/brave" # TODO make this configurable
       ".config/Code" # TODO make this configurable
       ".config/git" # TODO make this configurable
       ".config/spotify" # TODO make this configurable

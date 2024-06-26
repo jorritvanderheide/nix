@@ -125,7 +125,7 @@
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Super>Return";
-      command = "kitty";
+      command = "xdg-terminal";
       name = "Terminal";
     };
 

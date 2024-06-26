@@ -21,16 +21,16 @@
   home = {
     packages = with pkgs; [
       appflowy
+      brave
       cascadia-code
       dynamic-wallpaper
       figlet
       git
       gnome.dconf-editor
-      kitty
+      gnome.gnome-terminal
       nixpkgs-fmt
       signal-desktop
       spotify
-      ungoogled-chromium
       vscode
       whatsapp-for-linux
     ] ++ (with pkgs.gnomeExtensions; [
@@ -41,18 +41,8 @@
       clipboard-indicator
       dash-to-dock
       night-theme-switcher
+      no-overview
     ]);
-  };
-
-  # Setup Kitty
-  programs.kitty = {
-    enable = true;
-    font = {
-      name = "Cascadia Code";
-    };
-    settings = {
-      confirm_os_window_close = "0";
-    };
   };
 
   # Setup Git
@@ -62,7 +52,7 @@
     userEmail = "35707261+jorritvanderheide@users.noreply.github.com";
     extraConfig = {
       init.defaultBranch = "main";
-      safe.directory = "/persist/system/etc/nixos";
+      safe.directory = [ "/etc/nixos" "/persist/system/etc/nixos" ];
     };
   };
 

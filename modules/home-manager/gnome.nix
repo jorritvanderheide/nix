@@ -69,13 +69,14 @@
     "org/gnome/shell" = {
       welcome-dialog-last-shown-version = "46.2";
       enabled-extensions = [
+        "appindicatorsupport@rgcjonas.gmail.com"
         "blur-my-shell@aunetx"
         "burn-my-windows@schneegans.github.com"
         "caffeine@patapon.info"
         "clipboard-indicator@tudmotu.com"
         "dash-to-dock@micxgx.gmail.com"
         "nightthemeswitcher@romainvigier.fr"
-        "appindicatorsupport@rgcjonas.gmail.com"
+        "no-overview@fthx"
       ];
       favorite-apps = [
         "code.desktop"
@@ -85,6 +86,11 @@
 
     "org/gnome/shell/app-switcher" = {
       current-workspace-only = true;
+    };
+
+    "org/gnome/shell/blur-my-shell/panel" = {
+      override-background = true;
+      override-background-dynamically = true;
     };
 
     "org/gnome/shell/extensions/burn-my-windows" = {
@@ -104,4 +110,21 @@
       show-trash = false;
     };
   };
+
+  # Enable the triple buffering patch for Mutter
+  nixpkgs.overlays = [
+    (final: prev: {
+      gnome = prev.gnome.overrideScope (gnomeFinal: gnomePrev: {
+        mutter = gnomePrev.mutter.overrideAttrs (old: {
+          src = pkgs.fetchFromGitLab  {
+            domain = "gitlab.gnome.org";
+            owner = "vanvugt";
+            repo = "mutter";
+            rev = "triple-buffering-v4-46";
+            hash = "sha256-fkPjB/5DPBX06t7yj0Rb3UEuu5b9mu3aS+jhH18+lpI=";
+          };
+        });
+      });
+    })
+  ];
 }
