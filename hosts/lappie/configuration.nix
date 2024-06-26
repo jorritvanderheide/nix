@@ -13,6 +13,7 @@
       ./hardware-configuration.nix
       ./../../modules/nixos/impermanence.nix
       ./../../modules/nixos/protonvpn.nix
+      ./../../modules/nixos/security.nix
     ];
 
   boot = {

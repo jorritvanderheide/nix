@@ -3,7 +3,7 @@
 # | | '_ ` _ \| '_ \ / _ \ '__| '_ ` _ \ / _` | '_ \ / _ \ '_ \ / __/ _ \
 # | | | | | | | |_) |  __/ |  | | | | | | (_| | | | |  __/ | | | (_|  __/
 # |_|_| |_| |_| .__/ \___|_|  |_| |_| |_|\__,_|_| |_|\___|_| |_|\___\___|
-#             |_|                                                                 
+#             |_|                                                        
 
 { config, lib, pkgs, inputs, ... }:
 
@@ -16,7 +16,7 @@
   home.persistence."/persist/home/jorrit" = {
     allowOther = true;
     directories = [
-      ".config/brave" # TODO make this configurable
+      ".config/BraveSoftware/Brave-Browser" # TODO make this configurable
       ".config/Code" # TODO make this configurable
       ".config/git" # TODO make this configurable
       ".config/spotify" # TODO make this configurable
@@ -53,7 +53,6 @@
     files = [
       ".config/monitors.xml"
       ".screenrc"
-      "gnome-initial-setup-done"
     ];
   };
 }

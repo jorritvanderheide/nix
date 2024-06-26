@@ -1,9 +1,9 @@
-#                                  
+#                                   
 #   __ _ _ __   ___  _ __ ___   ___ 
 #  / _` | '_ \ / _ \| '_ ` _ \ / _ \
 # | (_| | | | | (_) | | | | | |  __/
 #  \__, |_| |_|\___/|_| |_| |_|\___|
-#  |___/         
+#  |___/                            
 
 { lib, config, pkgs, ... }:
 
@@ -79,7 +79,9 @@
         "no-overview@fthx"
       ];
       favorite-apps = [
+        "brave-browser.desktop"
         "code.desktop"
+        "appflowy.desktop"
         "spotify.desktop"
       ];
     };
@@ -116,7 +118,7 @@
     (final: prev: {
       gnome = prev.gnome.overrideScope (gnomeFinal: gnomePrev: {
         mutter = gnomePrev.mutter.overrideAttrs (old: {
-          src = pkgs.fetchFromGitLab  {
+          src = pkgs.fetchFromGitLab {
             domain = "gitlab.gnome.org";
             owner = "vanvugt";
             repo = "mutter";
