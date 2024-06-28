@@ -9,6 +9,10 @@
 
 {
   dconf.settings = {
+    "ca/desrt/dconf-editor" = {
+      show-warning = false;
+    };
+
     "org/gnome/desktop/background" = {
       picture-uri = "file:///persist/home/jorrit/Pictures/Backgrounds/background-light.png";
       picture-uri-dark = "file:///persist/home/jorrit/Pictures/Backgrounds/background-dark.png";
@@ -29,7 +33,7 @@
     };
 
     "org/gnome/desktop/screensaver" = {
-      # lock-enabled = false;
+      lock-enabled = false;
     };
 
     "org/gnome/desktop/session" = {
