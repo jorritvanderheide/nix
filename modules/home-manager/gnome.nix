@@ -75,13 +75,14 @@
         "caffeine@patapon.info"
         "clipboard-indicator@tudmotu.com"
         "dash-to-dock@micxgx.gmail.com"
+        "impatience@gfxmonk.net"
         "nightthemeswitcher@romainvigier.fr"
         "no-overview@fthx"
       ];
       favorite-apps = [
         "brave-browser.desktop"
         "code.desktop"
-        "appflowy.desktop"
+        "obsidian.desktop"
         "spotify.desktop"
       ];
     };

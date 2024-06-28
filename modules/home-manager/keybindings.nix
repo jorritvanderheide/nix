@@ -29,8 +29,7 @@
       move-to-workspace-down = [ ];
       move-to-workspace-last = [ ];
       move-to-workspace-up = [ ];
-      switch-application = [ ];
-      switch-application-backward = [ ];
+      switch-applications-backward = [ ];
       switch-group = [ ];
       switch-group-backward = [ ];
       switch-input-source = [ ];
@@ -87,6 +86,7 @@
       move-to-workspace-right = [ "<Shift><Control><Super>Right" ];
       panel-run-dialog = [ "<Super>r" ];
       show-desktop = [ "<Super>d" ];
+      switch-applications = [ "<Alt>Tab" ];
       switch-to-workspace-left = [ "<Control><Super>Left" ];
       switch-to-workspace-right = [ "<Control><Super>Right" ];
       toggle-fullscreen = [ "Print" ];

@@ -20,7 +20,6 @@
   # Home packages and extensions
   home = {
     packages = with pkgs; [
-      appflowy
       brave
       cascadia-code
       dynamic-wallpaper
@@ -29,6 +28,7 @@
       gnome.dconf-editor
       gnome.gnome-terminal
       nixpkgs-fmt
+      obsidian
       signal-desktop
       spotify
       vscode
@@ -40,6 +40,7 @@
       caffeine
       clipboard-indicator
       dash-to-dock
+      impatience
       night-theme-switcher
       no-overview
     ]);

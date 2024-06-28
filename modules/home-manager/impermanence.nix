@@ -42,7 +42,7 @@
       "Desktop"
       "Documents"
       "Downloads"
-      "GitHub"
+      "Git"
       "Music"
       "Pictures"
       "Public"
