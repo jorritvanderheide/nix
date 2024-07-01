@@ -27,6 +27,7 @@
       git
       gnome.dconf-editor
       gnome.gnome-terminal
+      inter
       nixpkgs-fmt
       obsidian
       signal-desktop
