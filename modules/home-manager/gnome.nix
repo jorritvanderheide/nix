@@ -25,6 +25,8 @@
     "org/gnome/desktop/interface" = {
       clock-show-date = false;
       enable-hot-corners = false;
+      font-hinting = "none";
+      font-name = "Roboto 11";
       show-battery-percentage = true;
     };
 
@@ -65,7 +67,6 @@
     };
 
     "org/gnome/settings-daemon/plugins/power" = {
-      # power-button-action = "hibernate";
       sleep-inactive-ac-timeout = 600;
       sleep-inactive-battery-timeout = 600;
     };
@@ -80,6 +81,7 @@
         "clipboard-indicator@tudmotu.com"
         "dash-to-dock@micxgx.gmail.com"
         "impatience@gfxmonk.net"
+        "mprisLabel@moon-0xff.github.com"
         "nightthemeswitcher@romainvigier.fr"
         "no-overview@fthx"
       ];
@@ -115,6 +117,18 @@
       show-mounts = false;
       show-show-apps-button = false;
       show-trash = false;
+    };
+
+    "org/gnome/shell/extensions/mpris-label" = {
+      extension-place = "left";
+      left-click-action = "activate-player";
+      middle-click-action = "none";
+      right-click-action = "none";
+      scroll-action = "";
+      second-field = "";
+      thumb-forward-action = "none";
+      thumb-backward-action = "none";
+      use-album = false;
     };
   };
 

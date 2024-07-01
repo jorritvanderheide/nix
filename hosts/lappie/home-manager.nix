@@ -30,6 +30,7 @@
       inter
       nixpkgs-fmt
       obsidian
+      roboto
       signal-desktop
       spotify
       vscode
@@ -42,10 +43,14 @@
       clipboard-indicator
       dash-to-dock
       impatience
+      mpris-label
       night-theme-switcher
       no-overview
     ]);
   };
+
+  # Enable fontconfig
+  fonts.fontconfig.enable = true;
 
   # Setup Git
   programs.git = {
