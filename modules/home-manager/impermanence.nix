@@ -20,7 +20,9 @@
       ".config/Code" # TODO make this configurable
       ".config/git" # TODO make this configurable
       ".config/obsidian"
+      ".config/Signal" # TODO make this configurable
       ".config/spotify" # TODO make this configurable
+      ".config/whatsapp-for-linux" # TODO make this configurable
       ".vscode" # TODO make this configurable
 
       # # Wallpaper # TODO move to git
