@@ -25,8 +25,9 @@
     "org/gnome/desktop/interface" = {
       clock-show-date = false;
       enable-hot-corners = false;
+      icon-theme = "Tela-circle";
       font-hinting = "none";
-      font-name = "Roboto 11";
+      gtk-theme = "Orchis";
       show-battery-percentage = true;
     };
 
@@ -84,6 +85,7 @@
         "mprisLabel@moon-0xff.github.com"
         "nightthemeswitcher@romainvigier.fr"
         "no-overview@fthx"
+        "user-theme@gnome-shell-extensions.gcampax.github.com"
       ];
       favorite-apps = [
         "brave-browser.desktop"
@@ -112,6 +114,8 @@
 
     "org/gnome/shell/extensions/dash-to-dock" = {
       apply-custom-theme = true;
+      disable-overview-on-startup = true;
+      hide-tooltip = true;
       hot-keys = false;
       show-icons-emblems = false;
       show-mounts = false;

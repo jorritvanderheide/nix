@@ -25,9 +25,6 @@
       ".config/whatsapp-for-linux" # TODO make this configurable
       ".vscode" # TODO make this configurable
 
-      # # Wallpaper # TODO move to git
-      # ".local/share/backgrounds"
-      # ".local/share/gnome-background-properties"
 
       # Burn my windows # TODO make this configurable
       ".config/burn-my-windows/profiles"
@@ -52,6 +49,9 @@
       "Templates"
       "Videos"
       ".ssh"
+
+      ".icons" # TODO make this configurable
+      ".themes" # TODO make this configurable
     ];
     files = [
       ".config/monitors.xml"
