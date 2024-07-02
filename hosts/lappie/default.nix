@@ -21,7 +21,6 @@
     ./../../modules/nixos/impermanence.nix
     ./../../modules/nixos/protonvpn.nix
     ./../../modules/nixos/security.nix
-    ./../../modules/nixos/virtualization.nix
   ];
 
   boot = {
