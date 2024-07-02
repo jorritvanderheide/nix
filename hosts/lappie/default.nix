@@ -15,7 +15,7 @@
     inputs.disko.nixosModules.default
     inputs.home-manager.nixosModules.default
     inputs.impermanence.nixosModules.impermanence
-    # inputs.nix-hardware.nixosModules.default
+    inputs.nixos-hardware.nixosModules.framework-13th-gen-intel
 
     ./hardware-configuration.nix
     ./../../modules/nixos/impermanence.nix
@@ -24,32 +24,12 @@
   ];
 
   boot = {
-    blacklistedKernelModules = [
-      "cros-usbpd-charger"
-      "hid-sensor-hub"
-    ];
     kernelPackages = pkgs.linuxPackages_latest;
-    kernelParams = [
-      "i915.enable_psr=1"
-      "nvme.noacpi=1"
-    ];
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot.configurationLimit = 5;
       systemd-boot.enable = true;
     };
-  };
-
-  # System-wide settings
-  nix = {
-    settings.auto-optimise-store = true;
-    settings.experimental-features = ["flakes" "nix-command"];
-  };
-
-  # Package management settings
-  nixpkgs.config = {
-    allowAliases = false;
-    allowUnfree = true;
   };
 
   # Timezone configuration
@@ -100,7 +80,6 @@
   environment.systemPackages = with pkgs; [
     alejandra
     fish
-    fprintd
   ];
 
   # Filesystem and permissions

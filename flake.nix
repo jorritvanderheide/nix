@@ -25,6 +25,10 @@
     impermanence = {
       url = "github:nix-community/impermanence";
     };
+
+    nix-hardware = {
+      url = "github:nixos/nixos-hardware";
+    };
   };
 
   outputs = {
@@ -32,6 +36,7 @@
     nixpkgs,
     systems,
     home-manager,
+    nixos-hardware,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -48,6 +53,11 @@
     inherit lib;
     nixosModules = import ./modules/nixos;
     homeManagerModules = import ./modules/home-manager;
+
+    nix.settings = {
+      auto-optimise-store = true;
+      experimental-features = ["flakes" "nix-command"];
+    };
 
     nixosConfigurations = {
       # Lappie
