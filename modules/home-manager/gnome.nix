@@ -120,6 +120,8 @@
     };
 
     "org/gnome/shell/extensions/mpris-label" = {
+      button-placeholder = "";
+      divider-string = " - ";
       extension-place = "left";
       left-click-action = "activate-player";
       middle-click-action = "none";
