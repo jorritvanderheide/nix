@@ -1,21 +1,27 @@
-#                   __ _       
-#   ___ ___  _ __  / _(_) __ _ 
+#                   __ _
+#   ___ ___  _ __  / _(_) __ _
 #  / __/ _ \| '_ \| |_| |/ _` |
 # | (_| (_) | | | |  _| | (_| |
 #  \___\___/|_| |_|_| |_|\__, |
-#                        |___/ 
-
-{ config, lib, pkgs, inputs, ... }:
-
+#                        |___/
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./../../modules/nixos/impermanence.nix
-      ./../../modules/nixos/protonvpn.nix
-      ./../../modules/nixos/security.nix
-      ./../../modules/nixos/virtualization.nix
-    ];
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
+    inputs.disko.nixosModules.default
+    inputs.home-manager.nixosModules.default
+    inputs.impermanence.nixosModules.impermanence
+
+    ./hardware-configuration.nix
+    ./../../modules/nixos/impermanence.nix
+    ./../../modules/nixos/protonvpn.nix
+    ./../../modules/nixos/security.nix
+    ./../../modules/nixos/virtualization.nix
+  ];
 
   boot = {
     blacklistedKernelModules = [
@@ -37,7 +43,7 @@
   # System-wide settings
   nix = {
     settings.auto-optimise-store = true;
-    settings.experimental-features = [ "flakes" "nix-command" ];
+    settings.experimental-features = ["flakes" "nix-command"];
   };
 
   # Package management settings
@@ -48,16 +54,6 @@
 
   # Timezone configuration
   time.timeZone = "Europe/Amsterdam";
-
-  # User management and home-manager configuration
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      "jorrit" = import ./home-manager.nix;
-    };
-  };
-
-  # Desktop environment and display manager settings
 
   # Gnome
   services.xserver = {
@@ -102,6 +98,7 @@
 
   # System-wide packages
   environment.systemPackages = with pkgs; [
+    alejandra
     fish
     fprintd
     wireguard-tools
@@ -125,9 +122,9 @@
   };
 
   # User and group management
-  users.groups.persist = { };
+  users.groups.persist = {};
   users.users."jorrit" = {
-    extraGroups = [ "libvirtd" "networkmanager" "persist" "wheel" ];
+    extraGroups = ["libvirtd" "networkmanager" "persist" "wheel"];
     hashedPassword = "$y$j9T$ZYFriVsYqbMK11oWnQm3e0$vi2RkspRIpm1hOasZla1FZI99H1rKMLlOSsv5o/Rnp4";
     isNormalUser = true;
     shell = pkgs.fish;
@@ -142,7 +139,7 @@
   # Temporary files and directories configuration
   systemd.services.adjustNixosConfigPermissions = {
     description = "Adjust permissions for /persist/system/etc/nixos/ to allow group modifications";
-    wantedBy = [ "multi-user.target" ];
+    wantedBy = ["multi-user.target"];
     script = ''
       find /persist/system/etc/nixos/ -type d -exec chmod 0770 {} \;
       find /persist/system/etc/nixos/ -type f -exec chmod 0660 {} \;
@@ -155,4 +152,3 @@
   # End of configuration
   system.stateVersion = "24.05"; # Do not change or remove
 }
-
