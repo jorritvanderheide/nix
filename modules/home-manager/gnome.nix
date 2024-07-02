@@ -84,7 +84,6 @@
         "impatience@gfxmonk.net"
         "mprisLabel@moon-0xff.github.com"
         "nightthemeswitcher@romainvigier.fr"
-        "no-overview@fthx"
         "user-theme@gnome-shell-extensions.gcampax.github.com"
       ];
       favorite-apps = [

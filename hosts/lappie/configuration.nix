@@ -14,6 +14,7 @@
       ./../../modules/nixos/impermanence.nix
       ./../../modules/nixos/protonvpn.nix
       ./../../modules/nixos/security.nix
+      ./../../modules/nixos/virtualization.nix
     ];
 
   boot = {
@@ -126,7 +127,7 @@
   # User and group management
   users.groups.persist = { };
   users.users."jorrit" = {
-    extraGroups = [ "networkmanager" "persist" "wheel" ];
+    extraGroups = [ "libvirtd" "networkmanager" "persist" "wheel" ];
     hashedPassword = "$y$j9T$ZYFriVsYqbMK11oWnQm3e0$vi2RkspRIpm1hOasZla1FZI99H1rKMLlOSsv5o/Rnp4";
     isNormalUser = true;
     shell = pkgs.fish;

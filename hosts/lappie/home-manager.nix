@@ -46,7 +46,6 @@
       impatience
       mpris-label
       night-theme-switcher
-      no-overview
     ]);
   };
 

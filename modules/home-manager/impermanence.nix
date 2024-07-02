@@ -19,6 +19,7 @@
       ".config/BraveSoftware/Brave-Browser" # TODO make this configurable
       ".config/Code" # TODO make this configurable
       ".config/git" # TODO make this configurable
+      ".config/gnome-boxes" # TODO make this configurable
       ".config/obsidian"
       ".config/Signal" # TODO make this configurable
       ".config/spotify" # TODO make this configurable
