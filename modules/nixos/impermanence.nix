@@ -1,25 +1,31 @@
-#  _                                                                     
-# (_)_ __ ___  _ __   ___ _ __ _ __ ___   __ _ _ __   ___ _ __   ___ ___ 
+#  _
+# (_)_ __ ___  _ __   ___ _ __ _ __ ___   __ _ _ __   ___ _ __   ___ ___
 # | | '_ ` _ \| '_ \ / _ \ '__| '_ ` _ \ / _` | '_ \ / _ \ '_ \ / __/ _ \
 # | | | | | | | |_) |  __/ |  | | | | | | (_| | | | |  __/ | | | (_|  __/
 # |_|_| |_| |_| .__/ \___|_|  |_| |_| |_|\__,_|_| |_|\___|_| |_|\___\___|
-#             |_|                                                        
-
-{ config, lib, pkgs, ... }:
-
+#             |_|
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   fileSystems."/persist".neededForBoot = true;
   environment.persistence."/persist/system" = {
     directories = [
       "/etc/NetworkManager/system-connections"
       "/etc/nixos"
       "/etc/wireguard"
-      "/var/lib/bluetooth"
-      "/var/lib/fprint"
+
       "/var/lib/nixos"
       "/var/lib/systemd/coredump"
       "/var/log"
-      { directory = "/var/lib/colord"; user = "colord"; group = "colord"; mode = "u=rwx,g=rx,o="; }
+      {
+        directory = "/var/lib/colord";
+        user = "colord";
+        group = "colord";
+        mode = "u=rwx,g=rx,o=";
+      }
     ];
     files = [
       "/etc/machine-id"

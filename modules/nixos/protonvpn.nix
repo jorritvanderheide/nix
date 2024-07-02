@@ -1,16 +1,17 @@
-#                  _                               
-#  _ __  _ __ ___ | |_ ___  _ ____   ___ __  _ __  
-# | '_ \| '__/ _ \| __/ _ \| '_ \ \ / / '_ \| '_ \ 
+#                  _
+#  _ __  _ __ ___ | |_ ___  _ ____   ___ __  _ __
+# | '_ \| '__/ _ \| __/ _ \| '_ \ \ / / '_ \| '_ \
 # | |_) | | | (_) | || (_) | | | \ V /| |_) | | | |
 # | .__/|_|  \___/ \__\___/|_| |_|\_/ | .__/|_| |_|
-# |_|                                 |_|          
-
-{ config, lib, pkgs, ... }:
-
-with lib;
-
-let cfg = config.services.protonvpn;
-
+# |_|                                 |_|
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+with lib; let
+  cfg = config.services.protonvpn;
 in {
   options = {
     services.protonvpn = {
@@ -97,15 +98,18 @@ in {
   config = mkIf cfg.enable {
     networking.wg-quick.interfaces."${cfg.interface.name}" = {
       autostart = cfg.autostart;
-      dns = if cfg.interface.dns.enable then [ cfg.interface.dns.ip ] else [ ];
+      dns =
+        if cfg.interface.dns.enable
+        then [cfg.interface.dns.ip]
+        else [];
       privateKeyFile = cfg.interface.privateKeyFile;
-      address = [ cfg.interface.ip ];
+      address = [cfg.interface.ip];
       listenPort = cfg.interface.port;
 
       peers = [
         {
           publicKey = cfg.endpoint.publicKey;
-          allowedIPs = [ "0.0.0.0/0" "::/0" ];
+          allowedIPs = ["0.0.0.0/0" "::/0"];
           endpoint = "${cfg.endpoint.ip}:${builtins.toString cfg.endpoint.port}";
         }
       ];

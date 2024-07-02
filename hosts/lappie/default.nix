@@ -1,9 +1,9 @@
-#                   __ _
-#   ___ ___  _ __  / _(_) __ _
-#  / __/ _ \| '_ \| |_| |/ _` |
-# | (_| (_) | | | |  _| | (_| |
-#  \___\___/|_| |_|_| |_|\__, |
-#                        |___/
+#  _                   _
+# | | __ _ _ __  _ __ (_) ___
+# | |/ _` | '_ \| '_ \| |/ _ \
+# | | (_| | |_) | |_) | |  __/
+# |_|\__,_| .__/| .__/|_|\___|
+#         |_|   |_|
 {
   config,
   lib,
@@ -15,6 +15,7 @@
     inputs.disko.nixosModules.default
     inputs.home-manager.nixosModules.default
     inputs.impermanence.nixosModules.impermanence
+    # inputs.nix-hardware.nixosModules.default
 
     ./hardware-configuration.nix
     ./../../modules/nixos/impermanence.nix
@@ -101,7 +102,6 @@
     alejandra
     fish
     fprintd
-    wireguard-tools
   ];
 
   # Filesystem and permissions
@@ -147,6 +147,14 @@
     '';
     serviceConfig.Type = "oneshot";
     serviceConfig.RemainAfterExit = true;
+  };
+
+  # Setup impermanence
+  environment.persistence."/persist/system" = {
+    directories = [
+      "/var/lib/bluetooth"
+      "/var/lib/fprint"
+    ];
   };
 
   # End of configuration
