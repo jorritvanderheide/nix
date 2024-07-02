@@ -1,13 +1,16 @@
-#  _                                                                     
-# (_)_ __ ___  _ __   ___ _ __ _ __ ___   __ _ _ __   ___ _ __   ___ ___ 
+#  _
+# (_)_ __ ___  _ __   ___ _ __ _ __ ___   __ _ _ __   ___ _ __   ___ ___
 # | | '_ ` _ \| '_ \ / _ \ '__| '_ ` _ \ / _` | '_ \ / _ \ '_ \ / __/ _ \
 # | | | | | | | |_) |  __/ |  | | | | | | (_| | | | |  __/ | | | (_|  __/
 # |_|_| |_| |_| .__/ \___|_|  |_| |_| |_|\__,_|_| |_|\___|_| |_|\___\___|
-#             |_|                                                        
-
-{ config, lib, pkgs, inputs, ... }:
-
+#             |_|
 {
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     # NixOS modules
     inputs.impermanence.nixosModules.home-manager.impermanence
@@ -25,7 +28,6 @@
       ".config/spotify" # TODO make this configurable
       ".config/whatsapp-for-linux" # TODO make this configurable
       ".vscode" # TODO make this configurable
-
 
       # Burn my windows # TODO make this configurable
       ".config/burn-my-windows/profiles"

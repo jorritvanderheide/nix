@@ -1,13 +1,15 @@
-#                           _ _         
-#  ___  ___  ___ _   _ _ __(_) |_ _   _ 
+#                           _ _
+#  ___  ___  ___ _   _ _ __(_) |_ _   _
 # / __|/ _ \/ __| | | | '__| | __| | | |
 # \__ \  __/ (__| |_| | |  | | |_| |_| |
 # |___/\___|\___|\__,_|_|  |_|\__|\__, |
-#                                 |___/ 
-
-{ config, lib, pkgs, ... }:
-
+#                                 |___/
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   security.pam.services.login.fprintAuth = false;
 
   security.pam.services.gdm-fingerprint = lib.mkIf (config.services.fprintd.enable) {

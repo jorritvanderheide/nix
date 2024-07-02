@@ -1,13 +1,10 @@
-#      _ _     _         
-#   __| (_)___| | _____  
-#  / _` | / __| |/ / _ \ 
+#      _ _     _
+#   __| (_)___| | _____
+#  / _` | / __| |/ / _ \
 # | (_| | \__ \   < (_) |
-#  \__,_|_|___/_|\_\___/ 
-#                        
-
-{ device ? throw "Set this to your disk device, e.g. /dev/nvme0n1", ... }:
-
-{
+#  \__,_|_|___/_|\_\___/
+#
+{device ? throw "Set this to your disk device, e.g. /dev/nvme0n1", ...}: {
   disko.devices = {
     disk.main = {
       inherit device;
@@ -56,7 +53,7 @@
             size = "100%FREE";
             content = {
               type = "btrfs";
-              extraArgs = [ "-f" ];
+              extraArgs = ["-f"];
 
               subvolumes = {
                 "/root" = {
@@ -64,12 +61,12 @@
                 };
 
                 "/persist" = {
-                  mountOptions = [ "subvol=persist" "noatime" ];
+                  mountOptions = ["subvol=persist" "noatime"];
                   mountpoint = "/persist";
                 };
 
                 "/nix" = {
-                  mountOptions = [ "subvol=nix" "noatime" ];
+                  mountOptions = ["subvol=nix" "noatime"];
                   mountpoint = "/nix";
                 };
               };

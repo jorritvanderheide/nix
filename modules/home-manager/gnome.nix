@@ -1,13 +1,15 @@
-#                                   
-#   __ _ _ __   ___  _ __ ___   ___ 
+#
+#   __ _ _ __   ___  _ __ ___   ___
 #  / _` | '_ \ / _ \| '_ ` _ \ / _ \
 # | (_| | | | | (_) | | | | | |  __/
 #  \__, |_| |_|\___/|_| |_| |_|\___|
-#  |___/                            
-
-{ lib, config, pkgs, ... }:
-
+#  |___/
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
   dconf.settings = {
     "ca/desrt/dconf-editor" = {
       show-warning = false;
@@ -54,7 +56,7 @@
     "org/gnome/mutter" = {
       dynamic-workspaces = true;
       edge-tiling = true;
-      experimental-features = [ "scale-monitor-framebuffer" ];
+      experimental-features = ["scale-monitor-framebuffer"];
       workspaces-only-on-primary = true;
     };
 

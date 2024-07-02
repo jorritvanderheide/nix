@@ -23,6 +23,7 @@
         cascadia-code
         dynamic-wallpaper
         figlet
+        fzf
         git
         gnome.dconf-editor
         gnome.gnome-boxes
@@ -51,6 +52,12 @@
 
   # Enable fontconfig
   fonts.fontconfig.enable = true;
+
+  # Setup FZF
+  programs.fzf = {
+    enable = true;
+    enableFishIntegration = true;
+  };
 
   # Setup Git
   programs.git = {
