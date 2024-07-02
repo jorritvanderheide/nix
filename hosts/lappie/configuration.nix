@@ -88,7 +88,7 @@
         CPU_MIN_PERF_ON_BAT = 0;
         CPU_SCALING_GOVERNOR_ON_AC = "powersave";
         CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-        # PCIE_ASPM_ON_BAT = "powersupersave";
+        PCIE_ASPM_ON_BAT = "powersupersave";
       };
     };
   };

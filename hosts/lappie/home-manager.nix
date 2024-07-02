@@ -27,7 +27,6 @@
       git
       gnome.dconf-editor
       gnome.gnome-boxes
-      gnome.gnome-terminal
       gnome.gnome-tweaks
       inter
       nixpkgs-fmt
