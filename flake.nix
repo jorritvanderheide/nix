@@ -51,8 +51,8 @@
     );
   in {
     inherit lib;
-    nixosModules = import ./modules/nixos;
-    homeManagerModules = import ./modules/home-manager;
+    # nixosModules = import ./modules/nixos;
+    # homeManagerModules = import ./modules/home-manager;
 
     nix.settings = {
       auto-optimise-store = true;
@@ -70,16 +70,16 @@
       };
     };
 
-    homeManagerConfigurations = {
-      # Jorrit
-      jorrit = lib.homeManagerConfiguration {
-        modules = [
-          ./users/jorrit
-        ];
-        extraSpecialArgs = {
-          inherit inputs outputs;
-        };
-      };
-    };
+    # homeManagerConfigurations = {
+    # Jorrit
+    #  jorrit = lib.homeManagerConfiguration {
+    #   modules = [
+    #    ./users/jorrit
+    # ];
+    # extraSpecialArgs = {
+    #   inherit inputs outputs;
+    # };
+    #};
+    #};
   };
 }

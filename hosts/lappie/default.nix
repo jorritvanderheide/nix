@@ -32,6 +32,14 @@
     };
   };
 
+  # User management and home-manager configuration
+  home-manager = {
+    extraSpecialArgs = {inherit inputs;};
+    users = {
+      "jorrit" = import ../../users/jorrit/default.nix;
+    };
+  };
+
   # Timezone configuration
   time.timeZone = "Europe/Amsterdam";
 
@@ -80,6 +88,8 @@
   environment.systemPackages = with pkgs; [
     alejandra
     fish
+    git
+    home-manager
   ];
 
   # Filesystem and permissions

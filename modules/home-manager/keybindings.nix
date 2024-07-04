@@ -86,7 +86,7 @@
       move-to-workspace-right = ["<Shift><Control><Super>Right"];
       panel-run-dialog = ["<Super>r"];
       show-desktop = ["<Super>d"];
-      switch-applications = ["<Alt>Tab"];
+      switch-windows = ["<Alt>Tab"];
       switch-to-workspace-left = ["<Control><Super>Left"];
       switch-to-workspace-right = ["<Control><Super>Right"];
       toggle-fullscreen = ["Print"];

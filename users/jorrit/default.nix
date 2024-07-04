@@ -15,6 +15,8 @@
     ../../modules/home-manager/keybindings.nix
   ];
 
+  nixpkgs.config.allowUnfree = true;
+
   # Home packages and extensions
   home = {
     packages = with pkgs;
@@ -23,6 +25,7 @@
         cascadia-code
         dynamic-wallpaper
         figlet
+        figma-linux
         fzf
         git
         gnome.dconf-editor
