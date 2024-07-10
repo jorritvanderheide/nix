@@ -58,12 +58,6 @@
   in {
     inherit lib; # Make lib globally available
 
-    # Nix daemon settings, enabling optimizations and experimental features
-    nix.settings = {
-      auto-optimise-store = true;
-      experimental-features = ["flakes" "nix-command"];
-    };
-
     # NixOS configurations, specifying system-specific modules
     nixosConfigurations = {
       # Lappie

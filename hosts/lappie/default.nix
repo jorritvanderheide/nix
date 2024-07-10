@@ -26,6 +26,13 @@ in {
     ./../../modules/nixos/security.nix
   ];
 
+  # Nix daemon settings
+  nix.settings = {
+    auto-optimise-store = true;
+    experimental-features = ["flakes" "nix-command"];
+  };
+
+  # Boot configuration
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     loader = {
