@@ -53,6 +53,8 @@
       "Videos"
       ".ssh"
 
+      ".pub-cache" # TODO make this configurable
+
       ".icons" # TODO make this configurable
       ".themes" # TODO make this configurable
     ];

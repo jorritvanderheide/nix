@@ -35,7 +35,7 @@ in {
     };
   };
 
-  # # User management and home-manager configuration
+  # User management and home-manager configuration
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     users = {
@@ -93,8 +93,6 @@ in {
     fish
     git
     home-manager
-    networkmanager
-    wireguard-tools
   ];
 
   # Filesystem and permissions
@@ -104,9 +102,6 @@ in {
   networking = {
     hostName = "lappie";
     networkmanager.enable = true;
-    wireguard = {
-      enable = true;
-    };
   };
 
   # Fish shell configuration
@@ -120,7 +115,7 @@ in {
   # User and group management
   users.groups.persist = {};
   users.users."jorrit" = {
-    extraGroups = ["libvirtd" "networkmanager" "persist" "wheel"];
+    extraGroups = ["libvirtd" "networkmanager" "persist" "plugdev" "wheel"];
     hashedPassword = "$y$j9T$ZYFriVsYqbMK11oWnQm3e0$vi2RkspRIpm1hOasZla1FZI99H1rKMLlOSsv5o/Rnp4";
     isNormalUser = true;
     shell = pkgs.fish;
@@ -152,6 +147,11 @@ in {
       "/var/lib/fprint"
     ];
   };
+
+  # Setup Android USB debugging
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0666", GROUP="plugdev"
+  '';
 
   # End of configuration
   system.stateVersion = "24.05"; # Do not change or remove
