@@ -42,14 +42,6 @@ in {
     };
   };
 
-  # User management and home-manager configuration
-  home-manager = {
-    extraSpecialArgs = {inherit inputs;};
-    users = {
-      "jorrit" = import ../../users/jorrit/default.nix;
-    };
-  };
-
   # Timezone configuration
   time.timeZone = "Europe/Amsterdam";
 
@@ -159,6 +151,14 @@ in {
   services.udev.extraRules = ''
     SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0666", GROUP="plugdev"
   '';
+
+  # User management and home-manager configuration
+  home-manager = {
+    extraSpecialArgs = {inherit inputs;};
+    users = {
+      "jorrit" = import ../../users/jorrit/default.nix;
+    };
+  };
 
   # End of configuration
   system.stateVersion = "24.05"; # Do not change or remove

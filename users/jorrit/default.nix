@@ -30,11 +30,7 @@
         figma-linux
         fzf
         git
-        gnome.dconf-editor
-        gnome.gnome-boxes
-        gnome.gnome-tweaks
         inter
-        nixpkgs-fmt
         obsidian
         roboto
         signal-desktop
