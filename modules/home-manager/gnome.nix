@@ -100,7 +100,7 @@
       current-workspace-only = true;
     };
 
-    "org/gnome/shell/blur-my-shell/panel" = {
+    "org/gnome/shell/extensions/blur-my-shell/panel" = {
       override-background-dynamically = true;
     };
 
