@@ -19,6 +19,8 @@
 
   # Home packages and extensions
   home = {
+    username = "jorrit";
+    homeDirectory = "/home/jorrit";
     packages = with pkgs;
       [
         brave
@@ -64,7 +66,6 @@
 
   # Setup Git
   programs.git = {
-    enable = true;
     userName = "jorrit";
     userEmail = "35707261+jorritvanderheide@users.noreply.github.com";
     extraConfig = {
@@ -77,5 +78,7 @@
   systemd.user.startServices = "sd-switch";
 
   # End of configuration
-  home.stateVersion = "24.05"; # No not change or remove
+  home.stateVersion = "24.05"; # Do not change or remove
+
+  programs.home-manager.enable = true; # Enable home manager
 }

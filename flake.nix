@@ -51,8 +51,6 @@
     );
   in {
     inherit lib;
-    # nixosModules = import ./modules/nixos;
-    # homeManagerModules = import ./modules/home-manager;
 
     nix.settings = {
       auto-optimise-store = true;
@@ -64,22 +62,9 @@
       lappie = lib.nixosSystem {
         modules = [
           ./hosts/lappie
-          (import ./hosts/lappie/disko.nix {device = "/dev/nvme0n1";})
         ];
         specialArgs = {inherit inputs;};
       };
     };
-
-    # homeManagerConfigurations = {
-    # Jorrit
-    #  jorrit = lib.homeManagerConfiguration {
-    #   modules = [
-    #    ./users/jorrit
-    # ];
-    # extraSpecialArgs = {
-    #   inherit inputs outputs;
-    # };
-    #};
-    #};
   };
 }

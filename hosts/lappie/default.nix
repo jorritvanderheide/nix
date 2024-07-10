@@ -10,8 +10,11 @@
   pkgs,
   inputs,
   ...
-}: {
+}: let
+  diskoConfig = import ./disko.nix {device = "/dev/nvme0n1";};
+in {
   imports = [
+    diskoConfig
     inputs.disko.nixosModules.default
     inputs.home-manager.nixosModules.default
     inputs.impermanence.nixosModules.impermanence
@@ -32,7 +35,7 @@
     };
   };
 
-  # User management and home-manager configuration
+  # # User management and home-manager configuration
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     users = {
@@ -43,7 +46,7 @@
   # Timezone configuration
   time.timeZone = "Europe/Amsterdam";
 
-  # Gnome
+  # Desktop environment
   services.xserver = {
     enable = true;
     displayManager.gdm = {
@@ -90,6 +93,8 @@
     fish
     git
     home-manager
+    networkmanager
+    wireguard-tools
   ];
 
   # Filesystem and permissions
@@ -99,6 +104,9 @@
   networking = {
     hostName = "lappie";
     networkmanager.enable = true;
+    wireguard = {
+      enable = true;
+    };
   };
 
   # Fish shell configuration
