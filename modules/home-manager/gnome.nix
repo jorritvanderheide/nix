@@ -101,7 +101,6 @@
     };
 
     "org/gnome/shell/blur-my-shell/panel" = {
-      override-background = true;
       override-background-dynamically = true;
     };
 

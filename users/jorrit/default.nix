@@ -66,6 +66,7 @@
 
   # Setup Git
   programs.git = {
+    enable = true;
     userName = "jorrit";
     userEmail = "35707261+jorritvanderheide@users.noreply.github.com";
     extraConfig = {
