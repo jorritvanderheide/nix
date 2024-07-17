@@ -62,7 +62,7 @@ in {
     fwupd.enable = true;
     openssh.enable = true;
     printing.enable = true;
-    protonvpn.enable = true;
+    # protonvpn.enable = true;
     power-profiles-daemon.enable = false;
     tlp = {
       enable = true;

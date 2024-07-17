@@ -30,6 +30,7 @@
         fzf
         git
         # gnome.dconf-editor
+        gthumb
         inter
         obsidian
         roboto
