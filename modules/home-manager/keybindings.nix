@@ -23,8 +23,6 @@
       cycle-windows-backward = [];
       minimize = [];
       move-to-monitor-down = [];
-      move-to-monitor-left = [];
-      move-to-monitor-right = [];
       move-to-monitor-up = [];
       move-to-workspace-down = [];
       move-to-workspace-last = [];
@@ -76,6 +74,8 @@
     "org/gnome/desktop/wm/keybindings" = {
       close = ["<Alt>AudioPrev"];
       move-to-center = ["<Super>Space"];
+      move-to-monitor-left = ["<Super><Alt>Left"];
+      move-to-monitor-right = ["<Super><Alt>Right"];
       move-to-side-e = ["<Super>Right"];
       move-to-side-w = ["<Super>Left"];
       move-to-workspace-1 = ["<Shift><Control><Super>1"];

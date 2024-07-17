@@ -25,11 +25,11 @@
       [
         brave
         cascadia-code
-        dynamic-wallpaper
         figlet
         figma-linux
         fzf
         git
+        # gnome.dconf-editor
         inter
         obsidian
         roboto
