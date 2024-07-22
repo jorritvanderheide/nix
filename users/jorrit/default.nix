@@ -35,7 +35,6 @@
         inter
         meslo-lgs-nf
         obsidian
-        odoo
         roboto
         signal-desktop
         spotify
