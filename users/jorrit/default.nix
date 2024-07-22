@@ -25,6 +25,7 @@
       [
         brave
         cascadia-code
+        discord
         figlet
         figma-linux
         fzf
@@ -32,7 +33,9 @@
         # gnome.dconf-editor
         gthumb
         inter
+        meslo-lgs-nf
         obsidian
+        odoo
         roboto
         signal-desktop
         spotify
@@ -59,6 +62,19 @@
   programs.fzf = {
     enable = true;
     enableFishIntegration = true;
+  };
+
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      set fish_greeting
+    '';
+    plugins = [
+      {
+        name = "tide";
+        src = pkgs.fishPlugins.tide.src;
+      }
+    ];
   };
 
   # Setup Git
