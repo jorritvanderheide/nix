@@ -25,6 +25,7 @@
       [
         brave
         cascadia-code
+        dbeaver-bin
         discord
         figlet
         figma-linux
@@ -38,6 +39,7 @@
         roboto
         signal-desktop
         spotify
+        teams-for-linux
         vscode
         whatsapp-for-linux
       ]
