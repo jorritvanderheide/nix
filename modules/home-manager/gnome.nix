@@ -90,8 +90,8 @@
       ];
       favorite-apps = [
         "brave-browser.desktop"
-        "code.desktop"
         "obsidian.desktop"
+        "code.desktop"
         "spotify.desktop"
       ];
     };

@@ -71,10 +71,6 @@
       set fish_greeting
     '';
     plugins = [
-      {
-        name = "tide";
-        src = pkgs.fishPlugins.tide.src;
-      }
     ];
   };
 
