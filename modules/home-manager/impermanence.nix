@@ -28,7 +28,7 @@
       ".config/Signal" # TODO make this configurable
       ".config/spotify" # TODO make this configurable
       ".config/teams-for-linux" # TODO make this configurable
-      ".config/whatsapp-for-linux" # TODO make this configurable
+      ".config/ZapZap" # TODO make this configurable
       ".vscode" # TODO make this configurable
 
       # Burn my windows # TODO make this configurable

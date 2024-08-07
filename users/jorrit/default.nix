@@ -23,8 +23,8 @@
     homeDirectory = "/home/jorrit";
     packages = with pkgs;
       [
+        # Apps
         brave
-        cascadia-code
         dbeaver-bin
         discord
         figlet
@@ -33,15 +33,21 @@
         git
         # gnome.dconf-editor
         gthumb
-        inter
-        meslo-lgs-nf
         obsidian
-        roboto
         signal-desktop
         spotify
         teams-for-linux
         vscode
-        whatsapp-for-linux
+        zapzap
+
+        # Fonts
+        cascadia-code
+        inter
+        meslo-lgs-nf
+        roboto
+
+        # Other
+        android-tools
       ]
       ++ (with pkgs.gnomeExtensions; [
         appindicator
