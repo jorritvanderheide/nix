@@ -37,6 +37,7 @@
         signal-desktop
         spotify
         teams-for-linux
+        torrential
         vscode
         zapzap
 
