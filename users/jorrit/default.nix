@@ -28,7 +28,6 @@
         dbeaver-bin
         discord
         figlet
-        figma-linux
         fzf
         git
         # gnome.dconf-editor
@@ -39,7 +38,6 @@
         teams-for-linux
         torrential
         vscode
-        zapzap
 
         # Fonts
         cascadia-code
@@ -77,8 +75,6 @@
     interactiveShellInit = ''
       set fish_greeting
     '';
-    plugins = [
-    ];
   };
 
   # Setup Git
