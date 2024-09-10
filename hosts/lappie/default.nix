@@ -15,6 +15,7 @@
 in {
   imports = [
     diskoConfig
+    inputs.agenix.nixosModules.age
     inputs.disko.nixosModules.default
     inputs.home-manager.nixosModules.default
     inputs.impermanence.nixosModules.impermanence
@@ -88,6 +89,7 @@ in {
 
   # System-wide packages
   environment.systemPackages = with pkgs; [
+    agenix
     alejandra
     fish
     git
