@@ -6,6 +6,7 @@
 #  |___/
 #
 # Gnome settings for desktop environment settings and exxtensions.
+{
   lib,
   config,
   pkgs,
