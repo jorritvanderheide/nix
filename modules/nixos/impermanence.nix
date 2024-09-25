@@ -16,6 +16,7 @@
       "/etc/NetworkManager/system-connections"
       "/etc/nixos"
       "/etc/wireguard"
+      "/etc/ssh"
 
       "/var/lib/nixos"
       "/var/lib/systemd/coredump"

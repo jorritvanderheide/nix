@@ -22,8 +22,8 @@ in {
     inputs.nixos-hardware.nixosModules.framework-13th-gen-intel
 
     ./hardware-configuration.nix
+    ./../../modules/nixos/age.nix
     ./../../modules/nixos/impermanence.nix
-    ./../../modules/nixos/protonvpn.nix
     ./../../modules/nixos/security.nix
   ];
 
@@ -39,7 +39,13 @@ in {
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot.configurationLimit = 5;
-      systemd-boot.enable = true;
+      systemd-boot.enable = false;
+
+      grub = {
+        enable = true;
+        efiSupport = true;
+        device = "nodev";
+      };
     };
   };
 
@@ -63,7 +69,6 @@ in {
     fwupd.enable = true;
     openssh.enable = true;
     printing.enable = true;
-    # protonvpn.enable = true;
     power-profiles-daemon.enable = false;
     tlp = {
       enable = true;
@@ -96,6 +101,9 @@ in {
     home-manager
   ];
 
+  # Setup SSH
+  programs.ssh.startAgent = true;
+
   # Filesystem and permissions
   programs.fuse.userAllowOther = true;
 
@@ -117,7 +125,7 @@ in {
   users.groups.persist = {};
   users.users."jorrit" = {
     extraGroups = ["docker" "libvirtd" "networkmanager" "persist" "plugdev" "wheel"];
-    hashedPassword = "$y$j9T$ZYFriVsYqbMK11oWnQm3e0$vi2RkspRIpm1hOasZla1FZI99H1rKMLlOSsv5o/Rnp4";
+    hashedPasswordFile = config.age.secrets.jorrit.path;
     isNormalUser = true;
     shell = pkgs.fish;
   };
@@ -130,7 +138,7 @@ in {
 
   # Temporary files and directories configuration
   systemd.services.adjustNixosConfigPermissions = {
-    description = "Adjust permissions for /persist/system/etc/nixos/ to allow group modifications";
+    description = "Adjusting permissions for /persist/system/etc/nixos/ to allow group modifications";
     wantedBy = ["multi-user.target"];
     script = ''
       find /persist/system/etc/nixos/ -type d -exec chmod 0770 {} \;
