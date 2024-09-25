@@ -5,7 +5,7 @@
 #  \__, |_| |_|\___/|_| |_| |_|\___|
 #  |___/
 #
-# Gnome settings for desktop environment settings and exxtensions.
+# Gnome settings for desktop environment settings and extensions.
 {
   lib,
   config,
