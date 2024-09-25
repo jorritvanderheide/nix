@@ -31,7 +31,6 @@
         discord
         figlet
         fzf
-        git
         gthumb
         inkscape
         obsidian
