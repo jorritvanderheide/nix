@@ -100,6 +100,7 @@ in {
   environment.systemPackages = with pkgs; [
     agenix
     alejandra
+    displaylink
     fish
     git
     home-manager
