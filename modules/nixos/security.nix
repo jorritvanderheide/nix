@@ -4,6 +4,8 @@
 # \__ \  __/ (__| |_| | |  | | |_| |_| |
 # |___/\___|\___|\__,_|_|  |_|\__|\__, |
 #                                 |___/
+#
+# Enable fingerprint authentication.
 {
   config,
   lib,

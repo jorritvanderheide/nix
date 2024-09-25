@@ -4,6 +4,8 @@
 #   | | (_) | |  | |  | | |_
 #  _/ |\___/|_|  |_|  |_|\__|
 # |__/
+#
+# User configuration for Jorrit.
 {
   pkgs,
   inputs,
@@ -30,13 +32,12 @@
         figlet
         fzf
         git
-        # gnome.dconf-editor
         gthumb
+        inkscape
         obsidian
         signal-desktop
         spotify
         teams-for-linux
-        torrential
         vscode
 
         # Fonts
@@ -64,17 +65,17 @@
   # Enable fontconfig
   fonts.fontconfig.enable = true;
 
-  # Setup FZF
-  programs.fzf = {
-    enable = true;
-    enableFishIntegration = true;
-  };
-
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
       set fish_greeting
     '';
+  };
+
+  # Setup FZF
+  programs.fzf = {
+    enable = true;
+    enableFishIntegration = true;
   };
 
   # Setup Git

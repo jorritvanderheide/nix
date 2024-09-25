@@ -1,3 +1,10 @@
+#   __ _  __ _  ___
+#  / _` |/ _` |/ _ \
+# | (_| | (_| |  __/
+#  \__,_|\__, |\___|
+#        |___/
+#
+# Age encryption module configuration.
 {
   config,
   pkgs,

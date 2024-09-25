@@ -4,7 +4,8 @@
 # | (_| | | | | (_) | | | | | |  __/
 #  \__, |_| |_|\___/|_| |_| |_|\___|
 #  |___/
-{
+#
+# Gnome settings for desktop environment settings and exxtensions.
   lib,
   config,
   pkgs,

@@ -4,6 +4,8 @@
 # | | (_| | |_) | |_) | |  __/
 # |_|\__,_| .__/| .__/|_|\___|
 #         |_|   |_|
+#
+# Host configuration for Lappie.
 {
   config,
   lib,
@@ -69,6 +71,8 @@ in {
     fwupd.enable = true;
     openssh.enable = true;
     printing.enable = true;
+
+    # Power management
     power-profiles-daemon.enable = false;
     tlp = {
       enable = true;

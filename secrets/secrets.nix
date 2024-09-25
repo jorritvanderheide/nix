@@ -1,3 +1,11 @@
+#                         _
+#  ___  ___  ___ _ __ ___| |_ ___
+# / __|/ _ \/ __| '__/ _ \ __/ __|
+# \__ \  __/ (__| | |  __/ |_\__ \
+# |___/\___|\___|_|  \___|\__|___/
+#
+#
+# Public keys for decrypting Agenix secrets.
 let
   jorrit = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCtYfuvWKmjaDK0s+Zu94YKT72QxcekpCueOxduTLCDHmX/gvywzBgwe6Fp9UYAvUwLNQmfcez6o0i4+F2lKMkc+MDtsWR7qVyQ1h0SkZ1ivDdJolA8Nub7JPOjdiNuxkHprj9K68QCFKrA+D6yV9DxSHyXUWXDDhvhyn9t/LxUzC1KhLGcxcGoXhr7gKCswRia32vdAiqe6OmSpSOGnDICIwmQWLL64vlFh6LmRVFEl6NMZD8uzBpTn6n+ZEjIUDymWAtUjvma6ocZ4ry8E+fF5Q39jlK/jefxLhkxyoSEXI06xNwNTAWmprZOVGsjNf9Fuyunvl/Y4W88DDGPEHnBSXpKQvkoUzsw23dgmUTPFA5KrtE7nTspzJFIclquG5HOl23p9ad8tFza85orDxfGO0kubDtuDPXk8UzNz+V2XxsCYoh5JtOk3GKoZeZl8VKlNo+b/1+bLWZwbOLxTgXc8Zc8lXbxdC4oWQCke4KtThg06Jtgy146tlNsa8yk6V0=";
   users = [jorrit];

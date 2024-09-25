@@ -5,8 +5,10 @@
 #  \ \ \_/  \_\ \_/\ \L\.\_\ \ \\`\ /\  __/
 #   \ \_\   /\____\ \__/.\_\\ \_\ \_\ \____\
 #    \/_/   \/____/\/__/\/_/ \/_/\/_/\/____/
+#
+# Jorrit's NixOS config
 {
-  description = "My Nix Config";
+  description = "Jorrit's NixOS config";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -45,10 +47,10 @@
     agenix,
     ...
   } @ inputs: let
-    inherit (self) outputs; # Inherit outputs for easy reference
+    inherit (self) outputs; # Inherit outputs for easy reference in the rest of the flake
     lib = nixpkgs.lib // home-manager.lib; # Merge libraries from nixpkgs and home-manager
 
-    overlays = [agenix.overlays.default]; # Overlays for all systems
+    overlays = [agenix.overlays.default]; # Overlays for agenix
 
     # Function to apply configurations across supported systems
     forEachSystem = configurePackages: lib.genAttrs (import systems) (system: configurePackages pkgsFor.${system});
@@ -57,20 +59,20 @@
     pkgsFor = lib.genAttrs (import systems) (
       system:
         import nixpkgs {
-          inherit system overlays;
+          inherit system overlays; # Inherit system and overlays, allowing pkgsFor to be used as a package set
           config.allowUnfree = true; # Allow unfree packages
         }
     );
   in {
     inherit lib pkgsFor; # Make lib globally available
 
-    # NixOS configurations, specifying system-specific modules
+    # NixOS configurations, specifying the hosts and their modules
     nixosConfigurations = {
       # Lappie
       lappie = lib.nixosSystem {
         pkgs = pkgsFor.x86_64-linux;
         modules = [
-          ./hosts/lappie
+          ./hosts/lappie # Import the configuration for Lappie
         ];
         specialArgs = {inherit inputs;}; # Pass inputs as special arguments
       };
