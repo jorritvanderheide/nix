@@ -12,8 +12,9 @@
   ...
 }: {
   imports = [
-    ../../modules/home-manager/impermanence.nix
     ../../modules/home-manager/gnome.nix
+    ../../modules/home-manager/hyprland.nix
+    ../../modules/home-manager/impermanence.nix
     ../../modules/home-manager/keybindings.nix
   ];
 
@@ -47,6 +48,9 @@
 
         # Other
         android-tools
+
+        # Hyprland
+        kitty
       ]
       ++ (with pkgs.gnomeExtensions; [
         appindicator

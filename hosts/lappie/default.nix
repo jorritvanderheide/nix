@@ -64,6 +64,13 @@ in {
     };
   };
 
+  # Add Hyprland as a desktop environment option
+  programs.hyprland = {
+    enable = true;
+    package = pkgs.hyprland;
+    portalPackage = pkgs.xdg-desktop-portal-hyprland;
+  };
+
   # System services configuration
   services = {
     fprintd.enable = true;
