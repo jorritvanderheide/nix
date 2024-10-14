@@ -18,8 +18,8 @@
     };
 
     "org/gnome/desktop/background" = {
-      picture-uri = "file:///persist/home/jorrit/Pictures/Backgrounds/background-day.jpg";
-      picture-uri-dark = "file:///persist/home/jorrit/Pictures/Backgrounds/background-night.jpg";
+      picture-uri = "file:///persist/home/jorrit/Pictures/Backgrounds/day.jpg";
+      picture-uri-dark = "file:///persist/home/jorrit/Pictures/Backgrounds/night.jpg";
     };
 
     "org/gnome/desktop/datetime" = {
