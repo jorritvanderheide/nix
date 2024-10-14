@@ -13,7 +13,6 @@
 }: {
   imports = [
     ../../modules/home-manager/gnome.nix
-    ../../modules/home-manager/hyprland.nix
     ../../modules/home-manager/impermanence.nix
     ../../modules/home-manager/keybindings.nix
   ];
