@@ -47,24 +47,23 @@
     agenix,
     ...
   } @ inputs: let
-    inherit (self) outputs; # Inherit outputs for easy reference in the rest of the flake
-    lib = nixpkgs.lib // home-manager.lib; # Merge libraries from nixpkgs and home-manager
+    inherit (self) outputs;
+    lib = nixpkgs.lib // home-manager.lib;
 
-    overlays = [agenix.overlays.default]; # Overlays for agenix
-
-    # Function to apply configurations across supported systems
-    forEachSystem = configurePackages: lib.genAttrs (import systems) (system: configurePackages pkgsFor.${system});
+    # Overlays
+    overlays = [agenix.overlays.default];
 
     # Defines packages for each system
+    forEachSystem = configurePackages: lib.genAttrs (import systems) (system: configurePackages pkgsFor.${system});
     pkgsFor = lib.genAttrs (import systems) (
       system:
         import nixpkgs {
-          inherit system overlays; # Inherit system and overlays, allowing pkgsFor to be used as a package set
-          config.allowUnfree = true; # Allow unfree packages
+          inherit system overlays;
+          config.allowUnfree = true;
         }
     );
   in {
-    inherit lib pkgsFor; # Make lib globally available
+    inherit lib pkgsFor;
 
     # NixOS configurations, specifying the hosts and their modules
     nixosConfigurations = {
@@ -72,7 +71,8 @@
       lappie = lib.nixosSystem {
         pkgs = pkgsFor.x86_64-linux;
         modules = [
-          ./hosts/lappie # Import the configuration for Lappie
+          ./hosts/common
+          ./hosts/lappie
         ];
         specialArgs = {inherit inputs;}; # Pass inputs as special arguments
       };
