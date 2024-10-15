@@ -106,8 +106,8 @@
       ];
       favorite-apps = [
         "brave-browser.desktop"
-        "obsidian.desktop"
         "code.desktop"
+        "obsidian.desktop"
         "spotify.desktop"
       ];
     };

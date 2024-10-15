@@ -8,8 +8,6 @@
 # Home configuration for impermanence.
 {
   config,
-  lib,
-  pkgs,
   inputs,
   ...
 }: {
@@ -26,11 +24,12 @@
       ".config/discord" # TODO make this configurable
       ".config/git" # TODO make this configurable
       ".config/gnome-boxes" # TODO make this configurable
-      ".config/obsidian"
+      ".config/obsidian" # TODO make this configurable
+      ".config/Pinta" # TODO make this configurable
+      ".config/Postman" # TODO make this configurable
       ".config/Signal" # TODO make this configurable
       ".config/spotify" # TODO make this configurable
       ".config/teams-for-linux" # TODO make this configurable
-      ".config/ZapZap" # TODO make this configurable
       ".vscode" # TODO make this configurable
 
       # Burn my windows # TODO make this configurable
