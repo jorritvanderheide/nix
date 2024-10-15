@@ -34,6 +34,8 @@
         gthumb
         inkscape
         obsidian
+        pinta
+        postman
         signal-desktop
         spotify
         teams-for-linux
