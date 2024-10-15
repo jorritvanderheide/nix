@@ -7,11 +7,25 @@
 #
 # Gnome settings for desktop environment settings and extensions.
 {
-  lib,
   config,
+  lib,
   pkgs,
   ...
 }: {
+  # Gnome extensions
+  home.packages = with pkgs.gnomeExtensions; [
+    appindicator
+    blur-my-shell
+    burn-my-windows
+    caffeine
+    clipboard-indicator
+    dash-to-dock
+    impatience
+    mpris-label
+    night-theme-switcher
+  ];
+
+  # Gnome settings
   dconf.settings = {
     "ca/desrt/dconf-editor" = {
       show-warning = false;

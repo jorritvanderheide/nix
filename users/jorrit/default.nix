@@ -23,47 +23,32 @@
   home = {
     username = "jorrit";
     homeDirectory = "/home/jorrit";
-    packages = with pkgs;
-      [
-        # Apps
-        brave
-        dbeaver-bin
-        discord
-        figlet
-        fzf
-        gthumb
-        inkscape
-        obsidian
-        pinta
-        postman
-        signal-desktop
-        spotify
-        teams-for-linux
-        vscode
+    packages = with pkgs; [
+      # Apps
+      brave
+      dbeaver-bin
+      discord
+      figlet
+      fzf
+      gthumb
+      inkscape
+      obsidian
+      pinta
+      postman
+      signal-desktop
+      spotify
+      teams-for-linux
+      vscode
 
-        # Fonts
-        cascadia-code
-        inter
-        meslo-lgs-nf
-        roboto
+      # Fonts
+      cascadia-code
+      inter
+      meslo-lgs-nf
+      roboto
 
-        # Other
-        android-tools
-
-        # Hyprland
-        kitty
-      ]
-      ++ (with pkgs.gnomeExtensions; [
-        appindicator
-        blur-my-shell
-        burn-my-windows
-        caffeine
-        clipboard-indicator
-        dash-to-dock
-        impatience
-        mpris-label
-        night-theme-switcher
-      ]);
+      # Other
+      android-tools
+    ];
   };
 
   # Enable fontconfig
