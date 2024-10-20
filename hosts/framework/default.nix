@@ -1,11 +1,11 @@
-#  _                   _
-# | | __ _ _ __  _ __ (_) ___
-# | |/ _` | '_ \| '_ \| |/ _ \
-# | | (_| | |_) | |_) | |  __/
-# |_|\__,_| .__/| .__/|_|\___|
-#         |_|   |_|
+#   __                                             _
+#  / _|_ __ __ _ _ __ ___   _____      _____  _ __| | __
+# | |_| '__/ _` | '_ ` _ \ / _ \ \ /\ / / _ \| '__| |/ /
+# |  _| | | (_| | | | | | |  __/\ V  V / (_) | |  |   <
+# |_| |_|  \__,_|_| |_| |_|\___| \_/\_/ \___/|_|  |_|\_\
 #
-# Host configuration for Lappie.
+#
+# Host configuration for Framework.
 {
   config,
   pkgs,
@@ -15,14 +15,54 @@
   diskoConfig = import ./disko.nix {device = "/dev/nvme0n1";};
 in {
   imports = [
+    # Modules
     diskoConfig
     inputs.disko.nixosModules.default
     inputs.nixos-hardware.nixosModules.framework-13th-gen-intel
 
-    ./hardware-configuration.nix
+    # Configurations
+    ../../modules/nixos/power
+    ./hardware.nix
   ];
 
-  # Framework specific services configuration
+  # Boot
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    loader = {
+      efi.canTouchEfiVariables = true;
+      systemd-boot.configurationLimit = 5;
+      systemd-boot.enable = false;
+
+      grub = {
+        enable = true;
+        efiSupport = true;
+        device = "nodev";
+      };
+    };
+  };
+
+  # Networking
+  networking = {
+    hostName = "framework";
+  };
+
+  # Desktop environment
+  services.xserver = {
+    enable = true;
+    displayManager.gdm = {
+      enable = true;
+    };
+    desktopManager.gnome = {
+      enable = true;
+    };
+  };
+
+  # Packages
+  environment.systemPackages = with pkgs; [
+    displaylink
+  ];
+
+  # Services
   services = {
     fprintd.enable = true;
     fwupd.enable = true;
@@ -34,19 +74,6 @@ in {
           inherit (pkgs) system;
         })
       .fwupd;
-  };
-
-  # Set hostname
-  networking = {
-    hostName = "framework";
-  };
-
-  # Setup system-specific persist directories
-  environment.persistence."/persist/system" = {
-    directories = [
-      "/var/lib/bluetooth"
-      "/var/lib/fprint"
-    ];
   };
 
   # End of configuration

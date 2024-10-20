@@ -5,13 +5,19 @@
 #  \__, |_| |_|\___/|_| |_| |_|\___|
 #  |___/
 #
-# Gnome settings for desktop environment settings and extensions.
+# Home configuration for Gnome.
 {
   config,
-  lib,
+  inputs,
   pkgs,
+  backgroundPaths,
   ...
 }: {
+  imports = [
+    # Configurations
+    ./keybindings.nix
+  ];
+
   # Gnome extensions
   home.packages = with pkgs.gnomeExtensions; [
     appindicator
@@ -25,15 +31,15 @@
     night-theme-switcher
   ];
 
-  # Gnome settings
+  # Dconf settings
   dconf.settings = {
     "ca/desrt/dconf-editor" = {
       show-warning = false;
     };
 
     "org/gnome/desktop/background" = {
-      picture-uri = "file:///persist/home/jorrit/Pictures/Backgrounds/day.jpg";
-      picture-uri-dark = "file:///persist/home/jorrit/Pictures/Backgrounds/night.jpg";
+      picture-uri = backgroundPaths.light;
+      picture-uri-dark = backgroundPaths.dark;
     };
 
     "org/gnome/desktop/datetime" = {
@@ -80,10 +86,10 @@
       enabled = true;
     };
 
-    "org/gnome/settings-daemon/plugins/color" = {
-      night-light-enabled = true;
-      night-light-temperature = lib.hm.gvariant.mkUint32 4700;
-    };
+    # "org/gnome/settings-daemon/plugins/color" = {
+    #   night-light-enabled = true;
+    #   night-light-temperature = pkgs.lib.hm.gvariant.mkUint32 4700;
+    # };
 
     "org/gnome/settings-daemon/plugins/power" = {
       sleep-inactive-ac-timeout = 600;
@@ -154,7 +160,7 @@
     };
   };
 
-  # Enable the triple buffering patch for Mutter
+  # Triple buffering patch for Mutter
   nixpkgs.overlays = [
     (final: prev: {
       gnome = prev.gnome.overrideScope (gnomeFinal: gnomePrev: {

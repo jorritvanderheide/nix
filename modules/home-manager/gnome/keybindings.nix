@@ -5,12 +5,8 @@
 # |_|\_\___|\__, |_.__/|_|_| |_|\__,_|_|_| |_|\__, |___/
 #           |___/                             |___/
 #
-# Custom keybindings for Gnome.
-{
-  config,
-  pkgs,
-  ...
-}: {
+# Home configurationfor Gnome keybindings.
+{config, ...}: {
   dconf.settings = {
     # Remove unused bindings
     "org/gnome/desktop/wm/keybindings" = {

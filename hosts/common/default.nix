@@ -5,7 +5,7 @@
 #  \___\___/|_| |_| |_|_| |_| |_|\___/|_| |_|
 #
 #
-# Common host configuration for all systems.
+# Common host configuration.
 {
   config,
   pkgs,
@@ -14,10 +14,12 @@
 }: let
 in {
   imports = [
+    # Modules
     inputs.agenix.nixosModules.age
     inputs.home-manager.nixosModules.default
     inputs.impermanence.nixosModules.impermanence
 
+    # Configurations
     ./../../modules/nixos/age
     ./../../modules/nixos/impermanence
   ];
@@ -28,101 +30,52 @@ in {
     experimental-features = ["flakes" "nix-command"];
   };
 
-  # Boot configuration
-  boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
-    loader = {
-      efi.canTouchEfiVariables = true;
-      systemd-boot.configurationLimit = 5;
-      systemd-boot.enable = false;
-
-      grub = {
-        enable = true;
-        efiSupport = true;
-        device = "nodev";
-      };
-    };
-  };
-
   # Timezone configuration
   time.timeZone = "Europe/Amsterdam";
-
-  # Desktop environment
-  services.xserver = {
-    enable = true;
-    displayManager.gdm = {
-      enable = true;
-    };
-    desktopManager.gnome = {
-      enable = true;
-    };
-  };
-
-  # System services configuration
-  services = {
-    openssh.enable = true;
-    printing.enable = true;
-
-    # Power management
-    power-profiles-daemon.enable = false;
-    tlp = {
-      enable = true;
-      settings = {
-        CPU_ENERGY_PERF_POLICY_ON_AC = "powersave";
-        CPU_ENERGY_PERF_POLICY_ON_BAT = "powersave";
-        CPU_MAX_PERF_ON_AC = 100;
-        CPU_MAX_PERF_ON_BAT = 20;
-        CPU_MIN_PERF_ON_AC = 0;
-        CPU_MIN_PERF_ON_BAT = 0;
-        CPU_SCALING_GOVERNOR_ON_AC = "powersave";
-        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-        PCIE_ASPM_ON_BAT = "powersupersave";
-      };
-    };
-  };
-
-  # Power management configuration
-  powerManagement = {
-    enable = true;
-    powertop.enable = true;
-  };
-
-  # System-wide packages
-  environment.systemPackages = with pkgs; [
-    agenix
-    alejandra
-    displaylink
-    fish
-    git
-    home-manager
-  ];
-
-  # Setup SSH
-  programs.ssh.startAgent = true;
-
-  # Filesystem and permissions
-  programs.fuse.userAllowOther = true;
 
   # Networking configuration
   networking = {
     networkmanager.enable = true;
   };
 
-  # Fish shell configuration
-  programs.fish = {
-    enable = true;
-    interactiveShellInit = ''
-      set fish_greeting
-    '';
+  # Graphical services
+  services.xserver.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+
+  # System packages
+  environment.systemPackages = with pkgs; [
+    agenix
+    alejandra
+    displaylink
+    git
+    home-manager
+  ];
+
+  # Programs
+  programs = {
+    # SSH
+    ssh.startAgent = true;
+
+    # Fish
+    fish = {
+      enable = true;
+      interactiveShellInit = ''
+        set fish_greeting
+      '';
+    };
+
+    # Filesystem and permissions
+    # fuse.userAllowOther = true;
   };
 
-  # User and group management
-  users.groups.persist = {};
-  users.users."jorrit" = {
-    extraGroups = ["docker" "libvirtd" "networkmanager" "persist" "plugdev" "wheel"];
-    hashedPasswordFile = config.age.secrets.jorrit.path;
-    isNormalUser = true;
-    shell = pkgs.fish;
+  # Services
+  services = {
+    # SSH
+    openssh.enable = true;
+
+    # Printing
+    printing.enable = true;
   };
 
   # Adding systemd.tmpfiles.rules for /persist/home and /persist/home/<user>
@@ -131,21 +84,22 @@ in {
     "d /persist/home/jorrit 0700 jorrit users -"
   ];
 
+  # Virtualization
+  virtualisation.docker.enable = true;
+  virtualisation.docker.storageDriver = "btrfs";
+
   # Setup Android USB debugging
   services.udev.extraRules = ''
     SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0666", GROUP="plugdev"
   '';
 
-  # Setup docker
-  virtualisation.docker.enable = true;
-  virtualisation.docker.storageDriver = "btrfs";
-
-  # User management and home-manager configuration
-  home-manager = {
-    extraSpecialArgs = {inherit inputs;};
-    users = {
-      "jorrit" = import ../../users/jorrit;
-    };
+  # User and group management
+  users.groups.persist = {};
+  users.users."jorrit" = {
+    extraGroups = ["docker" "libvirtd" "networkmanager" "persist" "plugdev" "wheel"];
+    hashedPasswordFile = config.age.secrets.jorrit.path;
+    isNormalUser = true;
+    shell = pkgs.fish;
   };
 
   # End of configuration
