@@ -38,7 +38,7 @@ in {
 
   # Set hostname
   networking = {
-    hostName = "lappie";
+    hostName = "framework";
   };
 
   # Setup system-specific persist directories

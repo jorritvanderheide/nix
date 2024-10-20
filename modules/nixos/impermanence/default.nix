@@ -67,4 +67,17 @@
     btrfs subvolume create /btrfs_tmp/root
     umount /btrfs_tmp
   '';
+
+  # Temporary files and directories configuration
+  systemd.services.adjustNixosConfigPermissions = {
+    description = "Adjusting permissions for /persist/system/etc/nixos/ to allow group modifications";
+    wantedBy = ["multi-user.target"];
+    script = ''
+      find /persist/system/etc/nixos/ -type d -exec chmod 0770 {} \;
+      find /persist/system/etc/nixos/ -type f -exec chmod 0660 {} \;
+      chown -R :persist /persist/system/etc/nixos/
+    '';
+    serviceConfig.Type = "oneshot";
+    serviceConfig.RemainAfterExit = true;
+  };
 }

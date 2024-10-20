@@ -18,8 +18,8 @@ in {
     inputs.home-manager.nixosModules.default
     inputs.impermanence.nixosModules.impermanence
 
-    ./../../modules/nixos/age.nix
-    ./../../modules/nixos/impermanence.nix
+    ./../../modules/nixos/age
+    ./../../modules/nixos/impermanence
   ];
 
   # Nix daemon settings
@@ -131,19 +131,6 @@ in {
     "d /persist/home/jorrit 0700 jorrit users -"
   ];
 
-  # Temporary files and directories configuration
-  systemd.services.adjustNixosConfigPermissions = {
-    description = "Adjusting permissions for /persist/system/etc/nixos/ to allow group modifications";
-    wantedBy = ["multi-user.target"];
-    script = ''
-      find /persist/system/etc/nixos/ -type d -exec chmod 0770 {} \;
-      find /persist/system/etc/nixos/ -type f -exec chmod 0660 {} \;
-      chown -R :persist /persist/system/etc/nixos/
-    '';
-    serviceConfig.Type = "oneshot";
-    serviceConfig.RemainAfterExit = true;
-  };
-
   # Setup Android USB debugging
   services.udev.extraRules = ''
     SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0666", GROUP="plugdev"
@@ -157,7 +144,7 @@ in {
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     users = {
-      "jorrit" = import ../../users/jorrit/default.nix;
+      "jorrit" = import ../../users/jorrit;
     };
   };
 

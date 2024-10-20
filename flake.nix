@@ -67,12 +67,12 @@
 
     # NixOS configurations, specifying the hosts and their modules
     nixosConfigurations = {
-      # Lappie
-      lappie = lib.nixosSystem {
+      # Framework
+      framework = lib.nixosSystem {
         pkgs = pkgsFor.x86_64-linux;
         modules = [
           ./hosts/common
-          ./hosts/lappie
+          ./hosts/framework
         ];
         specialArgs = {inherit inputs;}; # Pass inputs as special arguments
       };
