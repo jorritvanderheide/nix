@@ -20,12 +20,13 @@
     lib = nixpkgs.lib // inputs.home-manager.lib;
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
+    outputs = self.outputs;
   in {
     nixosConfigurations = {
       framework = lib.nixosSystem {
         inherit system;
         specialArgs = {
-          inherit inputs;
+          inherit inputs outputs;
         };
         modules = [
           ./system.nix
@@ -34,10 +35,10 @@
     };
 
     homeConfigurations = {
-      jorrit = lib.homeManagerConfiguration {
+      "jorrit@framework" = lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {
-          inherit inputs;
+          inherit inputs outputs;
         };
         modules = [
           ./home.nix
