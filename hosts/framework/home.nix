@@ -7,25 +7,21 @@
   home.packages = with pkgs; [
       # Apps
       brave
-      dbeaver-bin
       discord
-      figlet
-      fzf
-      gthumb
       inkscape
       obsidian
       pinta
       postman
       signal-desktop
-      spotify
       teams-for-linux
       vscode
 
       # Fonts
       cascadia-code
       inter
-      meslo-lgs-nf
-      roboto
+
+      # CLI
+      figlet
 
       # Other
       android-tools
