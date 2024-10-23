@@ -1,45 +1,39 @@
 {
-  config,
-  inputs,
   pkgs,
   lib,
-  myLib,
+  inputs,
+  config,
   ...
 }: let
   cfg = config.myNixOS.impermanence;
-  cfg' = config;
 in {
   imports = [
     inputs.impermanence.nixosModules.impermanence
-    (myLib.extendModule {
-      path = inputs.persist-retro.nixosModules.persist-retro;
-
-      extraOptions = {
-        extended.persist-retro.enable = lib.mkEnableOption "enable persist-retro";
-      };
-
-      configExtension = config: lib.mkIf cfg'.extended.persist-retro.enable config;
-    })
+    inputs.persist-retro.nixosModules.persist-retro
   ];
 
   options.myNixOS.impermanence = {
-    wipeRoot.enable = lib.mkEnableOption "Destroy /root on every boot";
+    nukeRoot.enable = lib.mkEnableOption "Destroy /root on every boot";
 
     volumeGroup = lib.mkOption {
       default = "btrfs_vg";
-      description = "Btrfs volume group name";
+      description = ''
+        Btrfs volume group name
+      '';
     };
 
     directories = lib.mkOption {
       default = [];
-      description = "Directories to persist";
+      description = ''
+        directories to persist
+      '';
     };
   };
 
   config = {
-    extended.persist-retro.enable = true;
     fileSystems."/persist".neededForBoot = true;
     programs.fuse.userAllowOther = true;
+    users.groups.persist = {};
 
     environment.persistence = let
       persistentData = builtins.mapAttrs (name: user: {
@@ -59,6 +53,7 @@ in {
           [
             "/etc/NetworkManager/system-connections"
             "/etc/nixos"
+
             "/var/lib/bluetooth"
             "/var/lib/fprint"
             "/var/lib/nixos"
@@ -75,12 +70,13 @@ in {
         files = [
           "/etc/machine-id"
           "/var/lib/alsa/asound.state"
+          "/var/lib/cups/printers.conf"
         ];
       };
     };
 
     boot.initrd.postDeviceCommands =
-      lib.mkIf cfg.wipeRoot.enable
+      lib.mkIf cfg.nukeRoot.enable
       (lib.mkAfter ''
         mkdir /btrfs_tmp
         mount /dev/${cfg.volumeGroup}/root /btrfs_tmp

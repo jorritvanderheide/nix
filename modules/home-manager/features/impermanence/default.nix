@@ -42,6 +42,7 @@ in {
           "Desktop"
           "Documents"
           "Downloads"
+          "Git"
           "Music"
           "Pictures"
           "Public"
@@ -51,6 +52,17 @@ in {
           # User configuration directories
           ".ssh"
           ".local/share/keyrings"
+
+          ".config/Code"
+          ".config/discord"
+          ".config/git"
+          ".config/obsidian"
+          ".config/Pinta"
+          ".config/Postman"
+          ".config/Signal"
+          ".config/spotify"
+          ".config/teams-for-linux"
+          ".vscode"
         ]
         ++ cfg.directories;
       allowOther = true;

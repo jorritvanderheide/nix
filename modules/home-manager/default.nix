@@ -35,7 +35,7 @@ in {
     ++ bundles;
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfreePredicate = (pkg: true);
+  nixpkgs.config.allowUnfreePredicate = pkg: true;
 
   # State version - do not change this manually
   home.stateVersion = "24.11";

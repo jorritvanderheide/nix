@@ -30,7 +30,7 @@
         "jorrit@framework" = mkHome "x86_64-linux" ./hosts/framework/home.nix;
       };
 
-      homeManagerModules.default = ./modules/home-manager;
       nixosModules.default = ./modules/nixos;
+      homeManagerModules.default = ./modules/home-manager;
     };
 }
