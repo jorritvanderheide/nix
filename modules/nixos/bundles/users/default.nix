@@ -29,8 +29,8 @@ in {
     programs.fish.enable = true;
 
     home-manager = {
-      useGlobalPkgs = true;
-      useUserPackages = true;
+      # useGlobalPkgs = true;
+      # useUserPackages = true;
 
       extraSpecialArgs = {
         inherit inputs;

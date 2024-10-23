@@ -14,6 +14,7 @@
   environment.systemPackages = with pkgs; [
     alejandra
     git
+    home-manager
   ];
 
   # Services

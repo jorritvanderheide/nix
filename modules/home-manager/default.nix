@@ -37,9 +37,6 @@ in {
   # Allow unfree packages
   nixpkgs.config.allowUnfreePredicate = (pkg: true);
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-
   # State version - do not change this manually
   home.stateVersion = "24.11";
 }

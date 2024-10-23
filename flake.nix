@@ -7,6 +7,7 @@
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
     # Community modules
+    disko.url = "github:nix-community/disko";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";

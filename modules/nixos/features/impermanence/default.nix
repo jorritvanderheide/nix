@@ -59,10 +59,11 @@ in {
           [
             "/etc/NetworkManager/system-connections"
             "/etc/nixos"
-            "/var/log"
             "/var/lib/bluetooth"
+            "/var/lib/fprint"
             "/var/lib/nixos"
             "/var/lib/systemd/coredump"
+            "/var/log"
             {
               directory = "/var/lib/colord";
               user = "colord";

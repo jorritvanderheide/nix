@@ -3,22 +3,28 @@
   inputs,
   pkgs,
   ...
-}: {
+}: let
+  diskoConfig = import ./disko.nix {device = "/dev/nvme0n1";};
+in {
   imports = [
+    diskoConfig
+    inputs.disko.nixosModules.default
     inputs.nixos-hardware.nixosModules.framework-13th-gen-intel
     ./hardware.nix
   ];
 
   # Boot
   boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       efi.canTouchEfiVariables = true;
+      systemd-boot.enable = false;
+
       grub = {
         enable = true;
         efiSupport = true;
         device = "nodev";
       };
-      systemd-boot.enable = false;
     };
   };
 

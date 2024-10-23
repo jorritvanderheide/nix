@@ -41,5 +41,6 @@ in {
     experimental-features = ["flakes" "nix-command"];
   };
 
+  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 }

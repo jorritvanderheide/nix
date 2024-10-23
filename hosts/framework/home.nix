@@ -1,4 +1,6 @@
-{pkgs, ...}: {
+{ outputs, pkgs, ...}: {
+  imports = [outputs.homeManagerModules.default];
+
   # Home
   home.username = "jorrit";
   home.homeDirectory = "/home/jorrit";
@@ -6,7 +8,6 @@
   # TODO: Add to home-manager modules
   home.packages = with pkgs; [
       # Apps
-      brave
       discord
       inkscape
       obsidian
@@ -29,10 +30,14 @@
 
   # myHomeManager config
   myHomeManager = {
-    gnome = {
-      backgroundPaths.light = "file:///home/jorrit/Pictures/Backgrounds/day.jpg";
-      backgroundPaths.dark = "file:///home/jorrit/Pictures/Backgrounds/night.jpg";
-    };
+     gnome = {
+       enable = true;
+       backgroundPaths.light = "file:///home/jorrit/Pictures/Backgrounds/day.jpg";
+       backgroundPaths.dark = "file:///home/jorrit/Pictures/Backgrounds/night.jpg";
+     };
+
+     brave.enable = true;
+     git.enable = true;
 
     ## Impermanence
     impermanence = {
@@ -41,7 +46,6 @@
       ];
 
       cache.directories = [
-        ".config/BraveSoftware/Brave-Browser"
         ".config/Code"
         ".config/discord"
         ".config/git"
@@ -54,6 +58,7 @@
         ".vscode"
       ];
 
+     
       cache.files = [
         ".config/monitors.xml"
         ".screenrc"
