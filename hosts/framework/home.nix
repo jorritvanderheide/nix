@@ -52,7 +52,6 @@
         ".config/BraveSoftware/Brave-Browser"
         ".config/Code"
         ".config/discord"
-        ".config/git"
         ".config/obsidian"
         ".config/Pinta"
         ".config/Postman"
@@ -69,6 +68,7 @@
 
   # Git
   programs.git = {
+    enable = true;
     userName = "jorrit";
     userEmail = "35707261+jorritvanderheide@users.noreply.github.com";
     extraConfig = {
