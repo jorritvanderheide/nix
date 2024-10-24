@@ -7,7 +7,7 @@
     inputs.impermanence.nixosModules.home-manager.impermanence
   ];
 
-  home.persistence."/persist/home/jorrit" = {
+  home.persistence."/persist${config.home.homeDirectory}" = {
     allowOther = true;
     directories = [
       ".config/BraveSoftware/Brave-Browser"
