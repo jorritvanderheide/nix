@@ -35,6 +35,8 @@ in {
       userSettings =
         {
           "git.autofetch" = true;
+          "git.confirmSync" = false;
+          "git.suggestSmartCommit" = false;
           "window.menuBarVisibility" = "toggle";
         }
         // cfg.userSettings;
