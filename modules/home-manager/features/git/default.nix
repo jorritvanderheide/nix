@@ -24,17 +24,15 @@ in {
     };
   };
 
-  config = {
-    programs.git = {
-      enable = true;
-      userName = cfg.userName;
-      userEmail = cfg.userEmail;
-      extraConfig =
-        {
-          init.defaultBranch = "main";
-          safe.directory = ["/etc/nixos"];
-        }
-        // cfg.extraConfig;
-    };
+  config.programs.git = {
+    enable = true;
+    userName = cfg.userName;
+    userEmail = cfg.userEmail;
+    extraConfig =
+      {
+        init.defaultBranch = "main";
+        safe.directory = ["/etc/nixos"];
+      }
+      // cfg.extraConfig;
   };
 }

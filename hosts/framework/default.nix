@@ -33,9 +33,11 @@ in {
 
   # myNixOS config
   myNixOS = {
+    # Bundles
     bundles.desktop.enable = true;
-    bundles.users.enable = true;
 
+    ## Users
+    bundles.users.enable = true;
     home-users = {
       "jorrit" = {
         userConfig = ./home.nix;
@@ -45,6 +47,7 @@ in {
       };
     };
 
+    # Features
     impermanence.enable = true;
   };
 

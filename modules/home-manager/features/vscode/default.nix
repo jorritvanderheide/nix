@@ -1,15 +1,19 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: let
   cfg = config.myHomeManager.vscode;
 in {
   options.myHomeManager.vscode = {
     extensions = lib.mkOption {
-      type = lib.types.list;
-      default = with pkgs; [];
+      default = [];
       description = "Extensions to intall";
+    };
+    userSettings = lib.mkOption {
+      default = {};
+      description = "User settings";
     };
   };
 
@@ -18,15 +22,22 @@ in {
       enable = true;
 
       # Extensions
-      programs.vscode.extensions = with pkgs;
+      enableExtensionUpdateCheck = false;
+      extensions = with pkgs;
         [
-          vscode-extensions.github.copilot
-          vscode-extensions.github.copilot-chat
           vscode-extensions.jnoortheen.nix-ide
           vscode-extensions.kamadorueda.alejandra
-          vscode-extensions.zhuangtongfa.material-theme
         ]
         ++ cfg.extensions;
+
+      # Settings
+      enableUpdateCheck = false;
+      userSettings =
+        {
+          "git.autofetch" = true;
+          "window.menuBarVisibility" = "toggle";
+        }
+        // cfg.userSettings;
     };
   };
 }

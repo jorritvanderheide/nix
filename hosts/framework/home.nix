@@ -35,15 +35,37 @@
 
   # myHomeManager config
   myHomeManager = {
-    # Desktop environment
+    # Features
+    brave.enable = true;
     gnome.enable = true;
 
-    ## Features
-    brave.enable = true;
+    ## Fish
+    fish = {
+      plugins = with pkgs; [
+        fishPlugins.autopair
+      ];
+    };
+
+    ## Git
     git = {
       enable = true;
       userName = "jorrit";
       userEmail = "35707261+jorritvanderheide@users.noreply.github.com";
+    };
+
+    ## VSCode
+    vscode = {
+      enable = true;
+      extensions = with pkgs; [
+        vscode-extensions.eamodio.gitlens
+        vscode-extensions.github.copilot
+        vscode-extensions.github.copilot-chat
+        vscode-extensions.mskelton.one-dark-theme
+        vscode-extensions.zhuangtongfa.material-theme
+      ];
+      userSettings = {
+        "workbench.colorTheme" = "One Dark";
+      };
     };
 
     ## Impermanence
@@ -66,7 +88,6 @@
         ".icons"
         ".pub-cache"
         ".themes"
-        ".vscode"
       ];
     };
   };
