@@ -14,8 +14,8 @@ in {
   options.myHomeManager.gnome = {
     backgroundPaths = lib.mkOption {
       default = {
-        light = "file:///home/${config.home.username}/Pictures/Backgrounds/day.jpg";
-        dark = "file:///home/${config.home.username}/Pictures/Backgrounds/night.jpg";
+        light = "file://${config.home.homeDirectory}/Pictures/Backgrounds/light.jpg";
+        dark = "file://${config.home.homeDirectory}/Pictures/Backgrounds/dark.jpg";
       };
       description = "Paths to light and dark background images.";
     };

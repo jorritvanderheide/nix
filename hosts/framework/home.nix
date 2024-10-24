@@ -43,7 +43,29 @@
 
     ## Features
     brave.enable = true;
-    impermanence.enable = true;
+    impermanence = {
+      enable = true;
+      directories = [
+        # Data folders
+        "Git"
+
+        # Config folders
+        ".config/BraveSoftware/Brave-Browser"
+        ".config/Code"
+        ".config/discord"
+        ".config/git"
+        ".config/obsidian"
+        ".config/Pinta"
+        ".config/Postman"
+        ".config/Signal"
+        ".config/spotify"
+        ".config/teams-for-linux"
+        ".icons"
+        ".pub-cache"
+        ".themes"
+        ".vscode"
+      ];
+    };
   };
 
   # Git
