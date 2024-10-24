@@ -44,7 +44,7 @@
       enable = true;
       userName = "jorrit";
       userEmail = "35707261+jorritvanderheide@users.noreply.github.com";
-    }
+    };
 
     ## Impermanence
     impermanence = {
