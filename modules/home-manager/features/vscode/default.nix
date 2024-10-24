@@ -38,8 +38,13 @@ in {
           "git.confirmSync" = false;
           "git.suggestSmartCommit" = false;
           "window.menuBarVisibility" = "toggle";
+          "workbench.startupEditor" = "none";
         }
         // cfg.userSettings;
     };
+
+    myHomeManager.impermanence.directories = [
+      ".config/Code"
+    ];
   };
 }

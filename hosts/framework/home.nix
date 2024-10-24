@@ -72,12 +72,7 @@
     impermanence = {
       enable = true;
       directories = [
-        # Data folders
-        "Git"
-
         # Config folders
-        ".config/BraveSoftware/Brave-Browser"
-        ".config/Code"
         ".config/discord"
         ".config/obsidian"
         ".config/Pinta"

@@ -17,12 +17,21 @@ in {
     };
   };
 
-  config.programs.fish = {
-    plugins = with pkgs;
-      [
-        fishPlugins.hydro
-      ]
-      ++ cfg.plugins;
-    shellAliases = {} // cfg.shellAliases;
+  config = {
+    programs.fish = {
+      interactiveShellInit = ''
+        set fish_greeting # Disable greeting
+      '';
+      plugins = with pkgs;
+        [
+          fishPlugins.hydro
+        ]
+        ++ cfg.plugins;
+      shellAliases = {} // cfg.shellAliases;
+    };
+
+    myHomeManager.impermanence.directories = [
+      ".local/share/fish"
+    ];
   };
 }
