@@ -4,7 +4,7 @@
   lib,
   ...
 }: let
-  cfg = myNixOS.impermanence;
+  cfg = config.myNixOS.impermanence;
 in {
   imports = [
     inputs.impermanence.nixosModules.impermanence
