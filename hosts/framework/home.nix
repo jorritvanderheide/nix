@@ -35,14 +35,13 @@
 
   # myHomeManager config
   myHomeManager = {
-    gnome = {
-      enable = true;
-      backgroundPaths.light = "file:///home/jorrit/Pictures/Backgrounds/day.jpg";
-      backgroundPaths.dark = "file:///home/jorrit/Pictures/Backgrounds/night.jpg";
-    };
+    # Desktop environment
+    gnome.enable = true;
 
     ## Features
     brave.enable = true;
+
+    ## Impermanence
     impermanence = {
       enable = true;
       directories = [
