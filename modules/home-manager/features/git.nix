@@ -5,24 +5,22 @@
 }: let
   cfg = config.myHomeManager.git;
 in {
-  options = {
-    programs.git = {
-      userName = mkOption {
-        type = types.str;
-        default = config.home.username;
-        description = "The name to use for commits";
+  options.myHomeManager.git = {
+    userName = lib.mkOption {
+      type = lib.types.str;
+      default = config.home.username;
+      description = "The name to use for commits";
+    };
+    userEmail = lib.mkOption {
+      type = lib.types.str;
+      default = {
       };
-      userEmail = mkOption {
-        type = types.str;
-        default = {
-        };
-        description = "The email to use for commits";
-      };
-      extraConfig = mkOption {
-        type = types.attrs;
-        default = {};
-        description = "Extra configuration options to pass to git";
-      };
+      description = "The email to use for commits";
+    };
+    extraConfig = lib.mkOption {
+      type = lib.types.attrs;
+      default = {};
+      description = "Extra configuration options to pass to git";
     };
   };
 
@@ -36,7 +34,7 @@ in {
           init.defaultBranch = "main";
           safe.directory = ["/etc/nixos"];
         }
-        ++ cfg.extraConfig;
+        // cfg.extraConfig;
     };
   };
 }
