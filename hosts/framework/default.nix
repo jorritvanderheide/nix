@@ -46,7 +46,6 @@ in {
     };
 
     impermanence.enable = true;
-    impermanence.nukeRoot.enable = true;
   };
 
   # Framework-specific services for fingerprint support

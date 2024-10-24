@@ -41,23 +41,18 @@
       backgroundPaths.dark = "file:///home/jorrit/Pictures/Backgrounds/night.jpg";
     };
 
+    ## Features
     brave.enable = true;
-    git.enable = true;
+    impermanence.enable = true;
+  };
 
-    impermanence.data.directories = [
-    ];
-
-    impermanence.cache.directories = [
-      ".config/Code"
-      ".config/discord"
-      ".config/git"
-      ".config/obsidian"
-      ".config/Pinta"
-      ".config/Postman"
-      ".config/Signal"
-      ".config/spotify"
-      ".config/teams-for-linux"
-      ".vscode"
-    ];
+  # Git
+  programs.git = {
+    userName = "jorrit";
+    userEmail = "35707261+jorritvanderheide@users.noreply.github.com";
+    extraConfig = {
+      init.defaultBranch = "main";
+      safe.directory = ["/etc/nixos"];
+    };
   };
 }
