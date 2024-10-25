@@ -41,12 +41,14 @@ fi
 HOSTNAME=$1
 
 # Navigate to the NixOS configuration directory
-pushd /etc/nixos
+pushd /etc/nixos &>/dev/null
 
 # Pull the latest changes from the git repository
+echo "Pulling the latest changes..."
 git pull
 
 # Autoformat all Nix files
+echo "Formatting Nix files..."
 autoformat_nix_files
 
 # Show the changes
@@ -62,7 +64,7 @@ rebuild_nixos "$HOSTNAME"
 commit_changes
 
 # Back to where you were
-popd
+popd &>/dev/null
 
 # Notify all OK!
-notify-send -e "NixOS Rebuilt OK!" --icon=software-update-available
+echo-e "Rebuild successfull"
