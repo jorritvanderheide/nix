@@ -55,7 +55,7 @@ autoformat_nix_files
 git add .
 git diff -U0 '*.nix'
 
-echo "NixOS Rebuilding..."
+echo "Rebuilding NixOS..."
 
 # Rebuild NixOS
 rebuild_nixos "$HOSTNAME"
@@ -67,4 +67,4 @@ commit_changes
 popd &>/dev/null
 
 # Notify all OK!
-echo-e "Rebuild successfull"
+echo "Rebuild successfull"
