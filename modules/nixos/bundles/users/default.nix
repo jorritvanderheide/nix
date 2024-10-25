@@ -50,8 +50,8 @@ in {
       name: user:
         {
           isNormalUser = true;
-          shell = pkgs.fish;
           extraGroups = ["libvirtd" "networkmanager" "wheel"];
+          shell = pkgs.fish;
         }
         // user.userSettings
     ) (config.myNixOS.home-users);

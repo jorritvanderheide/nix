@@ -14,6 +14,9 @@ in {
   };
 
   config = {
+    # Impermanence fix
+    fileSystems."/etc/ssh".neededForBoot = true;
+
     # Agenix package
     environment.systemPackages = [
       inputs.agenix.packages."x86_64-linux".default
