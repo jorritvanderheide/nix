@@ -43,6 +43,7 @@ in {
       shellAliases =
         {
           "nrs" = "sudo nixos-rebuild switch --flake /etc/nixos#$(hostname)";
+          "rb" = "sh /etc/nixos/nixos-rebuild.sh $(hostname)";
         }
         // cfg.shellAliases;
     };

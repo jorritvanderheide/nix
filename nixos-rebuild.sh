@@ -29,8 +29,8 @@ rebuild_nixos() {
 # Function to commit changes
 commit_changes() {
   local current
-  current=$(nixos-rebuild list-generations | grep current)
-  git commit -am "$current"
+  current=$(nixos-rebuild list-generations | grep current | cut -d ' ' -f 1)
+  git commit -am "build: generation $current"
 }
 
 # Check if hostname is provided
