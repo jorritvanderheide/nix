@@ -34,6 +34,7 @@
     pinta.enable = true;
     postman.enable = true;
     signal.enable = true;
+    spotify.enable = true;
     teams.enable = true;
 
     ### Git
