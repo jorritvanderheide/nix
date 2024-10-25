@@ -128,7 +128,7 @@ in {
           "brave-browser.desktop"
           "code.desktop"
           "obsidian.desktop"
-          # "spotify.desktop"
+          "spotify.desktop"
         ];
       };
 
