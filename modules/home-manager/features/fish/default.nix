@@ -19,12 +19,14 @@ in {
 
   config = {
     programs.fish = {
-      interactiveShellInit = ''
-        set fish_greeting # Disable greeting
-      '';
-      plugins = with pkgs;
+      enable = true;
+      interactiveShellInit = "";
+      plugins =
         [
-          fishPlugins.hydro
+          {
+            name = "hydro";
+            src = pkgs.fishPlugins.hydro;
+          }
         ]
         ++ cfg.plugins;
       shellAliases = {} // cfg.shellAliases;

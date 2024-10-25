@@ -26,8 +26,6 @@ in {
   };
 
   config = {
-    programs.fish.enable = true;
-
     home-manager = {
       extraSpecialArgs = {
         inherit inputs;
@@ -51,7 +49,6 @@ in {
           isNormalUser = true;
           initialPassword = "10220408";
           description = "";
-          shell = pkgs.fish;
           extraGroups = ["libvirtd" "networkmanager" "wheel"];
         }
         // user.userSettings

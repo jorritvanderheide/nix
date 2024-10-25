@@ -41,8 +41,12 @@
 
     ## Fish
     fish = {
-      plugins = with pkgs; [
-        fishPlugins.autopair
+      enable = true;
+      plugins = [
+        {
+          name = "autopair";
+          src = pkgs.fishPlugins.autopair;
+        }
       ];
     };
 

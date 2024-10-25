@@ -37,6 +37,8 @@ in {
           "Videos"
 
           # Config folders
+          ".gnupgsd"
+          ".local/share/keyrings"
           ".ssh"
         ]
         ++ cfg.directories;
