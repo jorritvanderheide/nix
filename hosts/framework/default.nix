@@ -25,6 +25,7 @@ in {
         enable = true;
         efiSupport = true;
         device = "nodev";
+        # theme = /path; # TODO
       };
     };
   };
