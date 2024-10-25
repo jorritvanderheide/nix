@@ -30,7 +30,13 @@ rebuild_nixos() {
 commit_changes() {
   local current
   current=$(nixos-rebuild list-generations | grep current | cut -d ' ' -f 1)
-  git commit -am "build: generation $current"
+  
+   # Check if there are any changes to commit
+  if git diff-index --quiet HEAD --; then
+    echo "No changes to commit."
+  else
+    git commit -am "build: generation $current"
+  fi
 }
 
 # Check if hostname is provided
