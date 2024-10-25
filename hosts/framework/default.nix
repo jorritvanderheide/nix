@@ -38,13 +38,19 @@ in {
     bundles.desktop.enable = true;
     bundles.secrets.enable = true;
 
+    # Secrets
+    agenix.secrets = {
+      jorrit.file = ../../secrets/jorrit.age;
+    };
+
     ## Users
     bundles.users.enable = true;
     home-users = {
       "jorrit" = {
         userConfig = ./home.nix;
         userSettings = {
-          extraGroups = ["adbusers" "libvirtd" "networkmanager" "persist" "plugdev" "wheel"];
+          extraGroups = ["networkmanager" "persist" "wheel"];
+          hashedPasswordFile = config.age.secrets.jorrit.path;
         };
       };
     };

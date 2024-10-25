@@ -31,24 +31,29 @@ in {
 
     home-manager = {
       extraSpecialArgs = {
-        inherit inputs myLib;
+        inherit inputs;
+        inherit myLib;
         outputs = inputs.self.outputs;
       };
 
-      users = builtins.mapAttrs (name: user: {
-        imports = [
-          (import user.userConfig)
-          outputs.homeManagerModules.default
-        ];
-      }) (cfg.home-users);
+      users =
+        builtins.mapAttrs (name: user: {...}: {
+          imports = [
+            (import user.userConfig)
+            outputs.homeManagerModules.default
+          ];
+        })
+        (config.myNixOS.home-users);
     };
 
-    users.users = builtins.mapAttrs (name: user: {
-      isNormalUser = true;
-      initialPassword = "10220408";
-      description = "";
-      extraGroups = ["libvirtd" "networkmanager" "wheel"];
-      shell = pkgs.fish;
-    }) (cfg.home-users);
+    users.users = builtins.mapAttrs (
+      name: user:
+        {
+          isNormalUser = true;
+          shell = pkgs.fish;
+          extraGroups = ["libvirtd" "networkmanager" "wheel"];
+        }
+        // user.userSettings
+    ) (config.myNixOS.home-users);
   };
 }
