@@ -28,22 +28,13 @@
     ## Features
     brave.enable = true;
     discord.enable = true;
+    fish.enable = true;
     gnome.enable = true;
     obsidian.enable = true;
     pinta.enable = true;
     postman.enable = true;
     signal.enable = true;
     teams.enable = true;
-
-    ### Fish
-    fish = {
-      enable = true;
-      # plugins = [
-      # ];
-      # shellAliases = {
-      #   "nrbs" = "sudo nixos-rebuild switch --flake /etc/nixos#framework";
-      # };
-    };
 
     ### Git
     git = {
