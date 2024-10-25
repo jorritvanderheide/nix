@@ -8,6 +8,7 @@
 in {
   imports = [
     diskoConfig
+    inputs.agenix.nixosModules.default
     inputs.disko.nixosModules.default
     inputs.nixos-hardware.nixosModules.framework-13th-gen-intel
     ./hardware.nix
@@ -35,6 +36,7 @@ in {
   myNixOS = {
     # Bundles
     bundles.desktop.enable = true;
+    bundles.secrets.enable = true;
 
     ## Users
     bundles.users.enable = true;

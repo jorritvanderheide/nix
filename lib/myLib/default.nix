@@ -6,8 +6,9 @@ in rec {
   pkgsFor = sys: inputs.nixpkgs.legacyPackages.${sys};
 
   # Buildables
-  mkSystem = config:
+  mkSystem = sys: config:
     inputs.nixpkgs.lib.nixosSystem {
+      system = sys;
       specialArgs = {
         inherit inputs outputs myLib;
       };

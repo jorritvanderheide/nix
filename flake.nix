@@ -7,22 +7,26 @@
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
     # Community modules
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     disko.url = "github:nix-community/disko";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     impermanence.url = "github:nix-community/impermanence";
-    persist-retro.url = "github:Geometer1729/persist-retro";
   };
 
   outputs = {...} @ inputs: let
-    myLib = import ./lib/myLib/default.nix {inherit inputs;};
+    overlays = import ./overlays {inherit inputs;};
+    myLib = import ./lib/myLib {inherit inputs overlays;};
   in
     with myLib; {
       # NixOS configurations
       nixosConfigurations = {
-        framework = mkSystem ./hosts/framework;
+        framework = mkSystem "x86_64-linux" ./hosts/framework;
       };
 
       # Home-Manager configurations
