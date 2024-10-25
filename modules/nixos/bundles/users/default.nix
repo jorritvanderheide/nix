@@ -14,15 +14,16 @@ in {
       options = {
         userConfig = lib.mkOption {
           default = ./../../home-manager/work.nix;
-          example = "DP-1";
+          description = "Path to the user's Home Manager configuration file.";
         };
         userSettings = lib.mkOption {
           default = {};
-          example = "{}";
+          description = "Additional user-specific settings.";
         };
       };
     });
     default = {};
+    description = "Configuration for home users.";
   };
 
   config = {
@@ -30,31 +31,24 @@ in {
 
     home-manager = {
       extraSpecialArgs = {
-        inherit inputs;
-        inherit myLib;
+        inherit inputs myLib;
         outputs = inputs.self.outputs;
       };
 
-      users =
-        builtins.mapAttrs (name: user: {...}: {
-          imports = [
-            (import user.userConfig)
-            outputs.homeManagerModules.default
-          ];
-        })
-        (config.myNixOS.home-users);
+      users = builtins.mapAttrs (name: user: {
+        imports = [
+          (import user.userConfig)
+          outputs.homeManagerModules.default
+        ];
+      }) (cfg.home-users);
     };
 
-    users.users = builtins.mapAttrs (
-      name: user:
-        {
-          isNormalUser = true;
-          initialPassword = "10220408";
-          description = "";
-          extraGroups = ["libvirtd" "networkmanager" "wheel"];
-          shell = pkgs.fish;
-        }
-        // user.userSettings
-    ) (config.myNixOS.home-users);
+    users.users = builtins.mapAttrs (name: user: {
+      isNormalUser = true;
+      initialPassword = "10220408";
+      description = "";
+      extraGroups = ["libvirtd" "networkmanager" "wheel"];
+      shell = pkgs.fish;
+    }) (cfg.home-users);
   };
 }
