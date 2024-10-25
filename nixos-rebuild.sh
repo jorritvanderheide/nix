@@ -72,5 +72,5 @@ commit_changes
 # Back to where you were
 popd &>/dev/null
 
-# Notify all OK!
+# Return success message
 echo "Rebuild successfull!"
