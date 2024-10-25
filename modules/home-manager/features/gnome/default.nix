@@ -35,6 +35,11 @@ in {
       night-theme-switcher
     ];
 
+    # Impermanene
+    myHomeManager.impermanence.directories = [
+      ".config/burn-my-windows"
+    ];
+
     # Dconf settings
     dconf.settings = {
       "ca/desrt/dconf-editor" = {
@@ -90,10 +95,10 @@ in {
         enabled = true;
       };
 
-      # "org/gnome/settings-daemon/plugins/color" = {
-      #   night-light-enabled = true;
-      #   night-light-temperature = pkgs.lib.hm.gvariant.mkUint32 4700;
-      # };
+      "org/gnome/settings-daemon/plugins/color" = {
+        night-light-enabled = true;
+        night-light-temperature = inputs.home-manager.lib.hm.gvariant.mkUint32 4700;
+      };
 
       "org/gnome/settings-daemon/plugins/power" = {
         sleep-inactive-ac-timeout = 600;
@@ -118,7 +123,7 @@ in {
           "brave-browser.desktop"
           "code.desktop"
           "obsidian.desktop"
-          "spotify.desktop"
+          # "spotify.desktop"
         ];
       };
 

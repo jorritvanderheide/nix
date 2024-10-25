@@ -10,36 +10,32 @@
   home.username = "jorrit";
   home.homeDirectory = lib.mkDefault "/home/jorrit";
 
-  # TODO: Add to home-manager modules
+  # Packages
   home.packages = with pkgs; [
-    # Apps
-    discord
-    inkscape
-    obsidian
-    pinta
-    postman
-    signal-desktop
-    teams-for-linux
-    vscode
-
-    # Fonts
+    ## Fonts
     cascadia-code
     inter
 
-    # CLI
+    ## CLI
     figlet
 
-    # Other
+    ## Other
     android-tools
   ];
 
   # myHomeManager config
   myHomeManager = {
-    # Features
+    ## Features
     brave.enable = true;
+    discord.enable = true;
     gnome.enable = true;
+    obsidian.enable = true;
+    pinta.enable = true;
+    postman.enable = true;
+    signal.enable = true;
+    teams.enable = true;
 
-    ## Fish
+    ### Fish
     fish = {
       enable = true;
       plugins = [
@@ -50,14 +46,24 @@
       ];
     };
 
-    ## Git
+    ### Git
     git = {
       enable = true;
       userName = "jorrit";
       userEmail = "35707261+jorritvanderheide@users.noreply.github.com";
     };
 
-    ## VSCode
+    ### Impermanence
+    impermanence = {
+      enable = true;
+      directories = [
+        ".icons"
+        ".pub-cache"
+        ".themes"
+      ];
+    };
+
+    ### VSCode
     vscode = {
       enable = true;
       extensions = with pkgs; [
@@ -70,24 +76,6 @@
       userSettings = {
         "workbench.colorTheme" = "One Dark";
       };
-    };
-
-    ## Impermanence
-    impermanence = {
-      enable = true;
-      directories = [
-        # Config folders
-        ".config/discord"
-        ".config/obsidian"
-        ".config/Pinta"
-        ".config/Postman"
-        ".config/Signal"
-        ".config/spotify"
-        ".config/teams-for-linux"
-        ".icons"
-        ".pub-cache"
-        ".themes"
-      ];
     };
   };
 }
