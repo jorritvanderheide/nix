@@ -40,7 +40,7 @@ in {
           "/etc/nixos"
           "/etc/wireguard"
           "/etc/ssh"
-          "/var/lib/AccountsService/icons"
+          "/var/lib/AccountsService"
           "/var/lib/bluetooth"
           "/var/lib/fprint"
           "/var/lib/nixos"

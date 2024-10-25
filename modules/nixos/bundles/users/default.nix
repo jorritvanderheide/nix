@@ -26,6 +26,8 @@ in {
   };
 
   config = {
+    programs.fish.enable = true;
+
     home-manager = {
       extraSpecialArgs = {
         inherit inputs;
@@ -50,6 +52,7 @@ in {
           initialPassword = "10220408";
           description = "";
           extraGroups = ["libvirtd" "networkmanager" "wheel"];
+          shell = pkgs.fish;
         }
         // user.userSettings
     ) (config.myNixOS.home-users);

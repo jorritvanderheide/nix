@@ -36,9 +36,14 @@ in {
     ];
 
     # Impermanene
-    myHomeManager.impermanence.directories = [
-      ".config/burn-my-windows"
-    ];
+    myHomeManager.impermanence = {
+      directories = [
+        ".config/burn-my-windows"
+      ];
+      files = [
+        ".config/monitors.xml"
+      ];
+    };
 
     # Dconf settings
     dconf.settings = {

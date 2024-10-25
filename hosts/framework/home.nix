@@ -38,12 +38,11 @@
     ### Fish
     fish = {
       enable = true;
-      plugins = [
-        {
-          name = "autopair";
-          src = pkgs.fishPlugins.autopair;
-        }
-      ];
+      # plugins = [
+      # ];
+      # shellAliases = {
+      #   "nrbs" = "sudo nixos-rebuild switch --flake /etc/nixos#framework";
+      # };
     };
 
     ### Git

@@ -45,7 +45,6 @@ in {
       files =
         [
           # Config files
-          ".config/monitors.xml"
           ".screenrc"
         ]
         ++ cfg.files;
