@@ -34,6 +34,7 @@ in {
 
     myHomeManager.impermanence.directories = [
       ".config/fish"
+      ".local/share/fish"
     ];
   };
 }
