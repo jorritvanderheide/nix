@@ -38,6 +38,7 @@ in {
 
           # Config folders
           ".gnupgsd"
+          ".local/share/backgrounds"
           ".local/share/keyrings"
           ".ssh"
         ]

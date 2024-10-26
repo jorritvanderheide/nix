@@ -45,6 +45,7 @@ in {
 
     myHomeManager.impermanence.directories = [
       ".config/Code"
+      ".vscode"
     ];
   };
 }

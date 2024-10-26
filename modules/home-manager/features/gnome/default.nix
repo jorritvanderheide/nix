@@ -33,15 +33,12 @@ in {
       impatience
       mpris-label
       night-theme-switcher
-      worksets
     ];
 
     # Impermanene
     myHomeManager.impermanence = {
       directories = [
         ".config/burn-my-windows"
-        ".config/worksets@blipk.xyz"
-        ".local/share/backgrounds"
       ];
       files = [
         ".config/monitors.xml"
@@ -126,7 +123,6 @@ in {
           "mprisLabel@moon-0xff.github.com"
           "nightthemeswitcher@romainvigier.fr"
           "user-theme@gnome-shell-extensions.gcampax.github.com"
-          "worksets@blipk.xyz"
         ];
         favorite-apps = [
           "brave-browser.desktop"
