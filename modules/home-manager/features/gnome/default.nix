@@ -40,6 +40,7 @@ in {
     myHomeManager.impermanence = {
       directories = [
         ".config/burn-my-windows"
+        ".config/worksets@blipk.xyz"
       ];
       files = [
         ".config/monitors.xml"
