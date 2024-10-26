@@ -41,6 +41,7 @@ in {
       directories = [
         ".config/burn-my-windows"
         ".config/worksets@blipk.xyz"
+        ".local/share/backgrounds"
       ];
       files = [
         ".config/monitors.xml"

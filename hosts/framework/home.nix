@@ -21,6 +21,7 @@
 
     ## Other
     android-tools
+    dynamic-wallpaper
   ];
 
   # myHomeManager config
