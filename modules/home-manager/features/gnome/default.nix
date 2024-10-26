@@ -33,6 +33,7 @@ in {
       impatience
       mpris-label
       night-theme-switcher
+      steal-my-focus-window
     ];
 
     # Impermanene
@@ -122,6 +123,7 @@ in {
           "impatience@gfxmonk.net"
           "mprisLabel@moon-0xff.github.com"
           "nightthemeswitcher@romainvigier.fr"
+          "steal-my-focus-window@steal-my-focus-window"
           "user-theme@gnome-shell-extensions.gcampax.github.com"
         ];
         favorite-apps = [
