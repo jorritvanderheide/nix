@@ -33,6 +33,7 @@ in {
       impatience
       mpris-label
       night-theme-switcher
+      worksets
     ];
 
     # Impermanene
@@ -123,6 +124,7 @@ in {
           "mprisLabel@moon-0xff.github.com"
           "nightthemeswitcher@romainvigier.fr"
           "user-theme@gnome-shell-extensions.gcampax.github.com"
+          "worksets@blipk.xyz"
         ];
         favorite-apps = [
           "brave-browser.desktop"
