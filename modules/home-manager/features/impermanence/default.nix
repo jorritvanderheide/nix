@@ -39,6 +39,7 @@ in {
           # Config folders
           ".gnupg"
           ".local/share/backgrounds"
+          ".local/share/icc"
           ".local/share/keyrings"
           ".ssh"
         ]
