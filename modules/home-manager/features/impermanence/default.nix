@@ -37,7 +37,7 @@ in {
           "Videos"
 
           # Config folders
-          ".gnupgsd"
+          ".gnupg"
           ".local/share/backgrounds"
           ".local/share/keyrings"
           ".ssh"

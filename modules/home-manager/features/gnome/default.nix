@@ -33,7 +33,6 @@ in {
       impatience
       mpris-label
       night-theme-switcher
-      smart-auto-move
       steal-my-focus-window
     ];
 
@@ -124,7 +123,6 @@ in {
           "impatience@gfxmonk.net"
           "mprisLabel@moon-0xff.github.com"
           "nightthemeswitcher@romainvigier.fr"
-          "smart-auto-move@khimaros.com"
           "steal-my-focus-window@steal-my-focus-window"
           "user-theme@gnome-shell-extensions.gcampax.github.com"
         ];
