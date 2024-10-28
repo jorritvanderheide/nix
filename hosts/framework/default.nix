@@ -25,7 +25,6 @@ in {
         enable = true;
         efiSupport = true;
         device = "nodev";
-        # theme = /path; # TODO
       };
     };
   };
@@ -50,13 +49,14 @@ in {
       "jorrit" = {
         userConfig = ./home.nix;
         userSettings = {
-          extraGroups = ["networkmanager" "persist" "wheel"];
+          extraGroups = ["docker" "networkmanager" "persist" "wheel"];
           hashedPasswordFile = config.age.secrets.jorrit.path;
         };
       };
     };
 
     # Features
+    docker.enable = true;
     impermanence.enable = true;
   };
 
