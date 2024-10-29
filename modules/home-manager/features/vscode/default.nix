@@ -34,6 +34,7 @@ in {
       userSettings =
         {
           # General settings
+          "editor.minimap.enabled" = false;
           "git.autofetch" = true;
           "git.confirmSync" = false;
           "git.suggestSmartCommit" = false;
@@ -42,21 +43,21 @@ in {
           "workbench.startupEditor" = "none";
 
           # Nix settings
-          "nix.serverPath" = "nixd";
           "nix.enableLanguageServer" = true;
-          "nixpkgs" = {
-            "expr" = "import <nixpkgs> { }";
-            "expr2" = "import (builtins.getFlake \"/etc/nixos\").inputs.nixpkgs { }";
-          };
-          "formatting" = {
-            "command" = ["alejandra"];
-          };
-          "options" = {
-            "nixos" = {
-              "expr" = "(builtins.getFlake \"/etc/nixos\").nixosConfigurations.framework.options";
-            };
-            "home-manager" = {
-              "expr" = "(builtins.getFlake \"/etc/nixos\").homeConfigurations.framework.options";
+          "nix.serverPath" = "nixd";
+          "nix.serverSettings" = {
+            "nixd" = {
+              "formatting" = {
+                "command" = ["alejandra"];
+              };
+              "options" = {
+                "nixos" = {
+                  "expr" = "(builtins.getFlake \"/etc/nixos\").nixosConfigurations.framework.options";
+                };
+                "home-manager" = {
+                  "expr" = "(builtins.getFlake \"/etc/nixos\").homeConfigurations.jorrit.options";
+                };
+              };
             };
           };
         }

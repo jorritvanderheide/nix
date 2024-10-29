@@ -61,12 +61,8 @@
         vscode-extensions.eamodio.gitlens
         vscode-extensions.github.copilot
         vscode-extensions.github.copilot-chat
-        # vscode-extensions.mskelton.one-dark-theme
         vscode-extensions.zhuangtongfa.material-theme
       ];
-      userSettings = {
-        # "workbench.colorTheme" = "One Dark";
-      };
     };
   };
 }
