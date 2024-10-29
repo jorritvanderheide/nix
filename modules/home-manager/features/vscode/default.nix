@@ -43,12 +43,14 @@ in {
           "workbench.startupEditor" = "none";
 
           # Nix settings
-          "nix.serverPath" = "nixd"
+          "nix.serverPath" = "nixd";
           "nix.enableLanguageServer" = true;
           "nixpkgs" = {
-            "expr" = "import <nixpkgs> {}";
+            "expr" = "import <nixpkgs> { }";
           };
-          }
+          "formatting" = {
+            "command" = ["alejandra"];
+          };
         }
         // cfg.userSettings;
     };
