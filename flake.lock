@@ -166,6 +166,21 @@
         "type": "github"
       }
     },
+    "persist-retro": {
+      "locked": {
+        "lastModified": 1709936804,
+        "narHash": "sha256-PXLha5hQLAFasIkSO4HJn9/pUbpXo8dtUKuXYYHsh6Y=",
+        "owner": "Geometer1729",
+        "repo": "persist-retro",
+        "rev": "28b016825449dc3f893e0515abfed418baed011f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Geometer1729",
+        "repo": "persist-retro",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "agenix": "agenix",
@@ -173,7 +188,8 @@
         "home-manager": "home-manager_2",
         "impermanence": "impermanence",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_2",
+        "persist-retro": "persist-retro"
       }
     },
     "systems": {

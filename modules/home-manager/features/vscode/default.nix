@@ -39,7 +39,6 @@ in {
           "git.suggestSmartCommit" = false;
           "window.menuBarVisibility" = "toggle";
           "workbench.startupEditor" = "none";
-          "workbench.settings.editor" = "json";
         }
         // cfg.userSettings;
     };

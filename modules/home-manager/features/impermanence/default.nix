@@ -8,6 +8,7 @@
 in {
   imports = [
     inputs.impermanence.nixosModules.home-manager.impermanence
+    inputs.persist-retro.nixosModules.home-manager.persist-retro
   ];
 
   options.myHomeManager.impermanence = {

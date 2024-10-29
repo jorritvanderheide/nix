@@ -34,16 +34,10 @@ in {
 
   # myNixOS config
   myNixOS = {
-    # Bundles
+    ## Bundles
     bundles.desktop.enable = true;
-    bundles.secrets.enable = true;
 
-    # Secrets
-    agenix.secrets = {
-      jorrit.file = ../../secrets/jorrit.age;
-    };
-
-    ## Users
+    ### Users
     bundles.users.enable = true;
     home-users = {
       "jorrit" = {
@@ -55,9 +49,17 @@ in {
       };
     };
 
-    # Features
+    ## Features
     docker.enable = true;
     impermanence.enable = true;
+
+    ### Secrets
+    agenix = {
+      enable = true;
+      secrets = {
+        jorrit.file = ../../secrets/jorrit.age;
+      };
+    };
   };
 
   # Framework-specific services for fingerprint support
