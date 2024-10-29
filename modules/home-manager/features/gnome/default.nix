@@ -66,7 +66,6 @@ in {
         enable-hot-corners = false;
         icon-theme = "Tela-circle";
         font-hinting = "none";
-        gtk-theme = "Orchis";
         show-battery-percentage = true;
       };
 

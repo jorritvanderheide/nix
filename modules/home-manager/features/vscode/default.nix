@@ -34,6 +34,7 @@ in {
       userSettings =
         {
           # General settings
+          "editor.formatOnSave" = true;
           "editor.minimap.enabled" = false;
           "git.autofetch" = true;
           "git.confirmSync" = false;
