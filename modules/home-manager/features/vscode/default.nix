@@ -39,6 +39,7 @@ in {
           "git.suggestSmartCommit" = false;
           "window.menuBarVisibility" = "toggle";
           "workbench.startupEditor" = "none";
+          "workbench.titleBarStyle" = "custom";
         }
         // cfg.userSettings;
     };
