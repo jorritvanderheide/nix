@@ -1,4 +1,11 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
+  # Nix
+  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+
   # Graphical services
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
@@ -15,6 +22,7 @@
     alejandra
     git
     home-manager
+    nixd
   ];
 
   # Services

@@ -34,12 +34,21 @@ in {
       enableUpdateCheck = false;
       userSettings =
         {
+          # General settings
           "git.autofetch" = true;
           "git.confirmSync" = false;
           "git.suggestSmartCommit" = false;
           "window.menuBarVisibility" = "toggle";
+          "window.titleBarStyle" = "custom";
           "workbench.startupEditor" = "none";
-          "workbench.titleBarStyle" = "custom";
+
+          # Nix settings
+          "nix.serverPath" = "nixd"
+          "nix.enableLanguageServer" = true;
+          "nixpkgs" = {
+            "expr" = "import <nixpkgs> {}";
+          };
+          }
         }
         // cfg.userSettings;
     };
