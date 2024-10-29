@@ -23,10 +23,9 @@ in {
 
       # Extensions
       enableExtensionUpdateCheck = false;
-      extensions = with pkgs;
+      extensions = with pkgs.vscode-extensions;
         [
-          vscode-extensions.jnoortheen.nix-ide
-          vscode-extensions.kamadorueda.alejandra
+          jnoortheen.nix-ide
         ]
         ++ cfg.extensions;
 
@@ -47,9 +46,18 @@ in {
           "nix.enableLanguageServer" = true;
           "nixpkgs" = {
             "expr" = "import <nixpkgs> { }";
+            "expr2" = "import (builtins.getFlake \"/etc/nixos\").inputs.nixpkgs { }";
           };
           "formatting" = {
             "command" = ["alejandra"];
+          };
+          "options" = {
+            "nixos" = {
+              "expr" = "(builtins.getFlake \"/etc/nixos\").nixosConfigurations.framework.options";
+            };
+            "home-manager" = {
+              "expr" = "(builtins.getFlake \"/etc/nixos\").homeConfigurations.framework.options";
+            };
           };
         }
         // cfg.userSettings;
