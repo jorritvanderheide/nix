@@ -8,12 +8,23 @@
 in {
   options.myHomeManager.fish = {
     plugins = lib.mkOption {
-      # type = lib.types.listOf.submodule;
+      type = lib.types.listOf (lib.types.submodule {
+        options = {
+          name = lib.mkOption {
+            type = lib.types.str;
+            description = "Name of the plugin";
+          };
+          src = lib.mkOption {
+            type = lib.types.package;
+            description = "Source of the plugin";
+          };
+        };
+      });
       default = [];
       description = "The plugins to source in 'conf.d/99plugins.fish'";
     };
     shellAliases = lib.mkOption {
-      # type = lib.type.attrsOf (lib.types.nullOr (lib.types.either lib.types.str lib.types.path)); # TODO: fix type
+      type = lib.types.attrsOf (lib.types.nullOr (lib.types.either lib.types.str lib.types.path));
       default = {};
       description = "Set of aliases for fish shell, which overwrites 'environment.shellAliases'. See 'environment.shellAliases' for an option format description";
     };
@@ -61,7 +72,6 @@ in {
           # General
           ".." = "cd ..";
           "..." = "cd ../..";
-          "~" = "cd ~";
 
           # Utility
           "c" = "clear";
