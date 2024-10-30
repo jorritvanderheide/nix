@@ -32,6 +32,7 @@
     discord.enable = true;
     fish.enable = true;
     gnome.enable = true;
+    hyprland.enable = true;
     obsidian.enable = true;
     pinta.enable = true;
     postman.enable = true;

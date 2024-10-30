@@ -50,6 +50,8 @@ in {
     };
 
     ## Features
+    gnome.enable = true;
+    hyprland.enable = true;
     docker.enable = true;
     impermanence.enable = true;
 

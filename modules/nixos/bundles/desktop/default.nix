@@ -6,11 +6,6 @@
   # Nix
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
-  # Graphical services
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
   # Networking
   networking.networkmanager.enable = true;
 
