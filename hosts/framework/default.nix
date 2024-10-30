@@ -62,7 +62,7 @@ in {
     };
   };
 
-  # Framework-specific services for fingerprint support
+  # Framework settings for fingerprint support
   services = {
     fprintd.enable = true;
     fwupd.enable = true;

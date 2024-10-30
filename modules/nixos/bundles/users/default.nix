@@ -1,22 +1,22 @@
 {
-  lib,
   config,
+  lib,
   inputs,
-  outputs,
   myLib,
+  outputs,
   pkgs,
   ...
-}: let
-  cfg = config.myNixOS;
-in {
+}: {
   options.myNixOS.home-users = lib.mkOption {
     type = lib.types.attrsOf (lib.types.submodule {
       options = {
         userConfig = lib.mkOption {
-          default = ./../../home-manager/work.nix;
+          type = lib.types.path;
+          default = ../../../hosts/${config.hostname}/home.nix;
           description = "Path to the user's Home Manager configuration file.";
         };
         userSettings = lib.mkOption {
+          type = lib.types.attrs;
           default = {};
           description = "Additional user-specific settings.";
         };

@@ -1,4 +1,4 @@
-{config, ...}: {
+{...}: {
   dconf.settings = {
     # Remove unused bindings
     "org/gnome/desktop/wm/keybindings" = {

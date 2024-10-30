@@ -8,10 +8,12 @@
 in {
   options.myHomeManager.vscode = {
     extensions = lib.mkOption {
+      type = lib.types.listOf lib.types.package;
       default = [];
       description = "Extensions to intall";
     };
     userSettings = lib.mkOption {
+      type = lib.types.attrs;
       default = {};
       description = "User settings";
     };

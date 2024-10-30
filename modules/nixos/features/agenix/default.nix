@@ -8,6 +8,7 @@
 in {
   options.myNixOS.agenix = {
     secrets = lib.mkOption {
+      type = lib.types.attrs;
       default = {};
       description = "Attribute set of Agenix secrets";
     };

@@ -4,7 +4,9 @@
   pkgs,
   ...
 }: {
-  imports = [outputs.homeManagerModules.default];
+  imports = [
+    outputs.homeManagerModules.default
+  ];
 
   # Home
   home.username = "jorrit";

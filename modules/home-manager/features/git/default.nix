@@ -13,8 +13,7 @@ in {
     };
     userEmail = lib.mkOption {
       type = lib.types.str;
-      default = {
-      };
+      default = "";
       description = "The email to use for commits";
     };
     extraConfig = lib.mkOption {

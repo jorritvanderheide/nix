@@ -8,21 +8,18 @@
 in {
   options.myHomeManager.fish = {
     plugins = lib.mkOption {
+      # type = lib.types.listOf.submodule;
       default = [];
-      description = "List of plugins";
+      description = "The plugins to source in 'conf.d/99plugins.fish'";
     };
     shellAliases = lib.mkOption {
+      # type = lib.type.attrsOf (lib.types.nullOr (lib.types.either lib.types.str lib.types.path)); # TODO: fix type
       default = {};
-      description = "Shell aliases";
+      description = "Set of aliases for fish shell, which overwrites 'environment.shellAliases'. See 'environment.shellAliases' for an option format description";
     };
   };
 
   config = {
-    home.packages = with pkgs; [
-      fishPlugins.autopair
-      fishPlugins.hydro
-    ];
-
     programs.fish = {
       enable = true;
       interactiveShellInit = ''
@@ -35,15 +32,50 @@ in {
             src = pkgs.fishPlugins.autopair;
           }
           {
+            name = "done";
+            src = pkgs.fishPlugins.done;
+          }
+          {
             name = "hydro";
             src = pkgs.fishPlugins.hydro;
+          }
+          {
+            name = "sponge";
+            src = pkgs.fishPlugins.sponge;
           }
         ]
         ++ cfg.plugins;
       shellAliases =
         {
-          "nrs" = "sudo nixos-rebuild switch --flake /etc/nixos#$(hostname)";
-          "rb" = "sh /etc/nixos/nixos-rebuild.sh $(hostname)";
+          # Nix
+          "ncommit" = "sh /etc/nixos/nixos-rebuild.sh $(hostname)";
+          "nswitch" = "sudo nixos-rebuild switch --flake /etc/nixos#$(hostname)";
+          "nsboot" = "sudo nixos-rebuild boot --flake /etc/nixos#$(hostname)";
+          "nrollback" = "sudo nixos-rebuild switch --rollback";
+          "nclean" = "nix-collect-garbage -d";
+          "nupdate" = "nix flake update";
+          "nshell" = "nix-shell -p";
+          "ndev" = "nix develop";
+          "nedit" = "code /etc/nixos";
+
+          # General
+          ".." = "cd ..";
+          "..." = "cd ../..";
+          "~" = "cd ~";
+
+          # Utility
+          "c" = "clear";
+          "mkd" = "mkdir -p";
+
+          # Git
+          "g" = "git";
+          "ga" = "git add";
+          "gc" = "git commit";
+          "gp" = "git push";
+          "gs" = "git status";
+          "gd" = "git diff";
+          "gco" = "git checkout";
+          "gb" = "git branch";
         }
         // cfg.shellAliases;
     };

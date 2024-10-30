@@ -13,10 +13,12 @@ in {
 
   options.myHomeManager.impermanence = {
     directories = lib.mkOption {
+      type = lib.types.listOf lib.types.str;
       default = [];
       description = "Directories to persist";
     };
     files = lib.mkOption {
+      type = lib.types.listOf lib.types.str;
       default = [];
       description = "Files to persist";
     };
