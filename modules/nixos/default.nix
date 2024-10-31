@@ -30,6 +30,8 @@
 in {
   imports =
     [
+      inputs.agenix.nixosModules.default
+      inputs.disko.nixosModules.default
       inputs.home-manager.nixosModules.home-manager
     ]
     ++ features
