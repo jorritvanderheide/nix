@@ -8,8 +8,6 @@
 in {
   imports = [
     diskoConfig
-    inputs.agenix.nixosModules.default
-    inputs.disko.nixosModules.default
     inputs.nixos-hardware.nixosModules.framework-13th-gen-intel
     ./hardware.nix
   ];
