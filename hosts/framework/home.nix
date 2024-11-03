@@ -29,10 +29,12 @@
   myHomeManager = {
     ## Features
     brave.enable = true;
+    cursor.enable = true;
+    direnv.enable = true;
     discord.enable = true;
     fish.enable = true;
     gnome.enable = true;
-    hyprland.enable = true;
+    # hyprland.enable = true;
     obsidian.enable = true;
     pinta.enable = true;
     postman.enable = true;
@@ -60,11 +62,11 @@
     ### VSCode
     vscode = {
       enable = true;
-      extensions = with pkgs; [
-        vscode-extensions.eamodio.gitlens
-        vscode-extensions.github.copilot
-        vscode-extensions.github.copilot-chat
-        vscode-extensions.zhuangtongfa.material-theme
+      extensions = with pkgs.vscode-extensions; [
+        eamodio.gitlens
+        github.copilot
+        github.copilot-chat
+        zhuangtongfa.material-theme
       ];
     };
   };
