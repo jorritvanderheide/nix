@@ -28,6 +28,7 @@ in {
       extensions = with pkgs.vscode-extensions;
         [
           jnoortheen.nix-ide
+          mkhl.direnv
         ]
         ++ cfg.extensions;
 
