@@ -68,7 +68,7 @@ in {
           "nupdate" = "nix flake update";
           "nshell" = "nix-shell -p";
           "ndev" = "nix develop";
-          "nedit" = "code /etc/nixos";
+          "nedit" = "code /etc/nixos & exit";
 
           # General
           ".." = "cd ..";
