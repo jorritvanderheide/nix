@@ -34,7 +34,7 @@
 
       # Home-Manager configurations
       homeConfigurations = {
-        "jorrit@framework" = mkHome "x86_64-linux" ./hosts/framework/home.nix;
+        "jorrit@framework" = mkHome "x86_64-linux" ./hosts/framework/users/jorrit;
       };
 
       nixosModules.default = ./modules/nixos;

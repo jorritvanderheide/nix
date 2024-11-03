@@ -34,12 +34,13 @@ in {
   myNixOS = {
     ## Bundles
     bundles.desktop.enable = true;
+    bundles.grub.enable = true;
 
     ### Users
     bundles.users.enable = true;
     home-users = {
       "jorrit" = {
-        userConfig = ./home.nix;
+        userConfig = ./users/jorrit;
         userSettings = {
           extraGroups = ["docker" "networkmanager" "persist" "wheel"];
           hashedPasswordFile = config.age.secrets.jorrit.path;
@@ -49,7 +50,6 @@ in {
 
     ## Features
     gnome.enable = true;
-    # hyprland.enable = true;
     docker.enable = true;
     impermanence.enable = true;
 
