@@ -1,11 +1,4 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
-  # Nix
-  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
-
+{pkgs, ...}: {
   # Networking
   networking.networkmanager.enable = true;
 

@@ -38,9 +38,13 @@ in {
     ++ bundles;
 
   # Nix
-  nix.settings = {
-    auto-optimise-store = true;
-    experimental-features = ["flakes" "nix-command"];
+  nix = {
+    nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = ["flakes" "nix-command"];
+      warn-dirty = false;
+    };
   };
 
   # Allow unfree packages
