@@ -34,7 +34,6 @@ in {
   myNixOS = {
     ## Bundles
     bundles.desktop.enable = true;
-    bundles.grub.enable = true;
 
     ### Users
     bundles.users.enable = true;
@@ -49,8 +48,9 @@ in {
     };
 
     ## Features
-    gnome.enable = true;
     docker.enable = true;
+    gnome.enable = true;
+    grub.enable = true;
     impermanence.enable = true;
 
     ### Secrets

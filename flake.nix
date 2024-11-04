@@ -1,5 +1,12 @@
+#      _                 _ _   _       _   _ _       ___  ____                     __ _
+#     | | ___  _ __ _ __(_) |_( )___  | \ | (_)_  __/ _ \/ ___|    ___ ___  _ __  / _(_) __ _
+#  _  | |/ _ \| '__| '__| | __|// __| |  \| | \ \/ / | | \___ \   / __/ _ \| '_ \| |_| |/ _` |
+# | |_| | (_) | |  | |  | | |_  \__ \ | |\  | |>  <| |_| |___) | | (_| (_) | | | |  _| | (_| |
+#  \___/ \___/|_|  |_|  |_|\__| |___/ |_| \_|_/_/\_\\___/|____/   \___\___/|_| |_|_| |_|\__, |
+#                                                                                       |___/
+#
 {
-  description = "Jorrit's NixOS configuration";
+  description = "Jorrit's NixOS config";
 
   inputs = {
     # NixOS modules
@@ -19,7 +26,6 @@
     hyprland.url = "github:hyprwm/Hyprland";
     impermanence.url = "github:nix-community/impermanence";
     persist-retro.url = "github:Geometer1729/persist-retro";
-    stylix.url = "github:danth/stylix";
   };
 
   outputs = {...} @ inputs: let
@@ -37,6 +43,7 @@
         "jorrit@framework" = mkHome "x86_64-linux" ./hosts/framework/users/jorrit;
       };
 
+      # Modules
       nixosModules.default = ./modules/nixos;
       homeManagerModules.default = ./modules/home-manager;
     };
