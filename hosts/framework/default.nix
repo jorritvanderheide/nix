@@ -52,6 +52,7 @@ in {
     gnome.enable = true;
     grub.enable = true;
     impermanence.enable = true;
+    logitech.enable = true;
 
     ### Secrets
     agenix = {
