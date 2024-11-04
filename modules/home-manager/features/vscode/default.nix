@@ -45,6 +45,7 @@ in {
           "window.menuBarVisibility" = "toggle";
           "window.titleBarStyle" = "custom";
           "workbench.startupEditor" = "none";
+          "workbench.colorTheme" = "One Dark Pro";
 
           # Nix settings
           "nix.enableLanguageServer" = true;
