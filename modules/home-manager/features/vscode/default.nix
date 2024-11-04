@@ -41,6 +41,7 @@ in {
           "editor.minimap.enabled" = false;
           "git.autofetch" = true;
           "git.confirmSync" = false;
+          "git.openRepositoryInParentFolders" = "always";
           "git.suggestSmartCommit" = false;
           "window.menuBarVisibility" = "toggle";
           "window.titleBarStyle" = "custom";
