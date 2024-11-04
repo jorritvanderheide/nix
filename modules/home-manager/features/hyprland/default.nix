@@ -8,7 +8,7 @@
 
     settings = {
       exec-once = [
-        "swww-daemon & sleep 0.5 && ${pkgs.bash}/bin/bash /etc/nixos/modules/home-manager/features/hyprland/set-wallpaper.sh"
+        "swww-daemon & sleep 0.5 && ${pkgs.bash}/bin/bash /etc/nixos/modules/home-manager/features/hyprland/scripts/set-wallpaper.sh && ${pkgs.bash}/bin/bash /etc/nixos/modules/home-manager/features/hyprland/scripts/handle_monitor_change.sh &"
       ];
 
       monitor = [
