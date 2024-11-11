@@ -1,6 +1,9 @@
 {pkgs, ...}: {
   # Networking
-  networking.networkmanager.enable = true;
+  networking = {
+    firewall.enable = true;
+    networkmanager.enable = true;
+  };
 
   # Timezone
   time.timeZone = "Europe/Amsterdam";
@@ -27,8 +30,8 @@
         turbo = "never";
       };
       charger = {
-        governor = "performance";
-        turbo = "auto";
+        governor = "default";
+        turbo = "never";
       };
     };
   };
