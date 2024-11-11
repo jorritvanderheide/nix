@@ -34,6 +34,7 @@ in {
       mpris-label
       night-theme-switcher
       steal-my-focus-window
+      unite
     ];
 
     # Impermanene
@@ -124,6 +125,7 @@ in {
           "nightthemeswitcher@romainvigier.fr"
           "steal-my-focus-window@steal-my-focus-window"
           "user-theme@gnome-shell-extensions.gcampax.github.com"
+          "unite@hardpixel.eu"
         ];
         favorite-apps = [
           "brave-browser.desktop"
@@ -172,6 +174,15 @@ in {
         thumb-forward-action = "none";
         thumb-backward-action = "none";
         use-album = false;
+      };
+
+      "org/gnome/shell/extensions/unite" = {
+        extend-left-box = false;
+        hide-activities-button = "never";
+        show-appmenu-button = false;
+        show-desktop-name = false;
+        show-window-buttons = "never";
+        use-activities-text = false;
       };
     };
 
