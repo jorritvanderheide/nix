@@ -107,7 +107,7 @@ in {
 
       "org/gnome/settings-daemon/plugins/color" = {
         night-light-enabled = true;
-        night-light-temperature = inputs.home-manager.lib.hm.gvariant.mkUint32 4700;
+        night-light-temperature = lib.hm.gvariant.mkUint32 4700;
       };
 
       "org/gnome/settings-daemon/plugins/power" = {
@@ -190,12 +190,19 @@ in {
       };
 
       # Other dconf apps
-      "com.raggesilver.BlackBox" = {
+      "com/raggesilver/BlackBox" = {
         easy-copy-paste = true;
         remember-window-size = true;
-        style-preference = 2;
+        style-preference = lib.hm.gvariant.mkUint32 2;
         terminal-bell = false;
-        terminal-padding = "(24, 24, 24, 24)";
+        terminal-padding = with lib.hm.gvariant;
+          mkTuple
+          [
+            (mkUint32 24)
+            (mkUint32 24)
+            (mkUint32 24)
+            (mkUint32 24)
+          ];
         theme-dark = "One Dark";
         working-directory-mode = 1;
       };
