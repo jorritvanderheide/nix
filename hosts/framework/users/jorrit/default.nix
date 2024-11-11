@@ -27,6 +27,10 @@
 
   # myHomeManager config
   myHomeManager = {
+    ## Bundles
+    bundles.cli.enable = true;
+    bundles.meshtastic.enable = true;
+
     ## Features
     brave.enable = true;
     cursor.enable = true;

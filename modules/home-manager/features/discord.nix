@@ -1,9 +1,9 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    discord
+    vesktop
   ];
 
   myHomeManager.impermanence.directories = [
-    ".config/discord"
+    ".config/vesktop"
   ];
 }

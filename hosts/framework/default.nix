@@ -41,7 +41,7 @@ in {
       "jorrit" = {
         userConfig = ./users/jorrit;
         userSettings = {
-          extraGroups = ["docker" "networkmanager" "persist" "wheel"];
+          extraGroups = ["dialout" "docker" "networkmanager" "persist" "wheel"];
           hashedPasswordFile = config.age.secrets.jorrit.path;
         };
       };
