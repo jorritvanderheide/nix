@@ -23,19 +23,23 @@ in {
 
   config = {
     # Gnome extensions
-    home.packages = with pkgs.gnomeExtensions; [
-      appindicator
-      blur-my-shell
-      burn-my-windows
-      caffeine
-      clipboard-indicator
-      dash-to-dock
-      impatience
-      mpris-label
-      night-theme-switcher
-      steal-my-focus-window
-      unite
-    ];
+    home.packages = with pkgs;
+      [
+        blackbox-terminal
+      ]
+      ++ [
+        gnomeExtensions.appindicator
+        gnomeExtensions.blur-my-shell
+        gnomeExtensions.burn-my-windows
+        gnomeExtensions.caffeine
+        gnomeExtensions.clipboard-indicator
+        gnomeExtensions.dash-to-dock
+        gnomeExtensions.impatience
+        gnomeExtensions.mpris-label
+        gnomeExtensions.night-theme-switcher
+        gnomeExtensions.steal-my-focus-window
+        gnomeExtensions.unite
+      ];
 
     # Impermanene
     myHomeManager.impermanence = {
@@ -183,6 +187,17 @@ in {
         show-desktop-name = false;
         show-window-buttons = "never";
         use-activities-text = false;
+      };
+
+      # Other dconf apps
+      "com.raggesilver.BlackBox" = {
+        easy-copy-paste = true;
+        remember-window-size = true;
+        style-preference = 2;
+        terminal-bell = false;
+        terminal-padding = "(24, 24, 24, 24)";
+        theme-dark = "One Dark";
+        working-directory-mode = 1;
       };
     };
 

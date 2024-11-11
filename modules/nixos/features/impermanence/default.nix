@@ -53,7 +53,6 @@ in {
         ++ cfg.directories;
       files =
         [
-          "/etc/machine-id"
           "/var/lib/alsa/asound.state"
           "/var/lib/cups/printers.conf"
         ]
