@@ -16,6 +16,8 @@
       "$mod CTRL, right, exec, hyprnome --no-empty-before"
       "$mod CTRL SHIFT, left, exec, hyprnome --previous --move --no-empty-before"
       "$mod CTRL SHIFT, right, exec, hyprnome --move --no-empty-before"
+      "$mod SHIFT, Q, exec, hyprctl dispatch exit"
+      "$mod, R, exec, hyprctl reload"
     ];
 
     bindel = [

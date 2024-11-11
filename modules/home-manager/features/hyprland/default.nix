@@ -8,12 +8,12 @@
 
     settings = {
       exec-once = [
-        "swww-daemon & sleep 0.5 && ${pkgs.bash}/bin/bash /etc/nixos/modules/home-manager/features/hyprland/scripts/set-wallpaper.sh && ${pkgs.bash}/bin/bash /etc/nixos/modules/home-manager/features/hyprland/scripts/handle_monitor_change.sh &"
+        "swww-daemon & sleep 0.5 && ${pkgs.bash}/bin/bash /etc/nixos/modules/home-manager/features/hyprland/scripts/set_wallpaper.sh && ${pkgs.bash}/bin/bash /etc/nixos/modules/home-manager/features/hyprland/scripts/handle_monitor_change.sh &"
       ];
 
       monitor = [
-        "eDP-1, 2256x1504@60, 0x0, 1"
-        "DP-1, preferred, 2256x-1504, 1"
+        "eDP-1, 2256x1504@60, 0x0, 1.175"
+        "DP-1, preferred, 2256x-1128, 1"
       ];
 
       general = {

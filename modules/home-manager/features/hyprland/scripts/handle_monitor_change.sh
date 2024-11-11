@@ -25,10 +25,10 @@ handle() {
   
    monitorremoved*)
       # Move all windows from the special workspace back
-      WINDOW_IDS=$(hyprctl clients | grep "2147483647" | grep "pid" | awk '{print $2}')
+      WINDOW_IDS=$(hyprctl clients | grep -F8 "2147483647" | grep "pid" | awk '{print $2}')
       
       for WINDOW_ID in $WINDOW_IDS; do
-        hyprctl dispatch movetoworkspace "special:special,pid:$WINDOW_ID"
+        hyprctl dispatch movetoworkspacesilent "special:special,pid:$WINDOW_ID"
       done
     ;;
   esac
