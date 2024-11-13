@@ -181,7 +181,6 @@ in {
       };
 
       "org/gnome/shell/extensions/unite" = {
-        extend-left-box = false;
         hide-activities-button = "never";
         show-appmenu-button = false;
         show-desktop-name = false;
