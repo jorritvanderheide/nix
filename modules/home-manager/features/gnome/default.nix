@@ -193,6 +193,7 @@ in {
       "com/raggesilver/BlackBox" = {
         easy-copy-paste = true;
         remember-window-size = true;
+        show-headerbar = false;
         style-preference = lib.hm.gvariant.mkUint32 2;
         terminal-bell = false;
         terminal-padding = with lib.hm.gvariant;
