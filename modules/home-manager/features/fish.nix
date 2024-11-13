@@ -87,6 +87,9 @@ in {
           "gd" = "git diff";
           "gco" = "git checkout";
           "gb" = "git branch";
+
+          # Overwrites
+          "cat" = "bat";
         }
         // cfg.shellAliases;
     };
