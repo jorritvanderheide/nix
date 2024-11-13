@@ -71,8 +71,8 @@ in {
           "nedit" = "code /etc/nixos";
 
           # General
-          ".." = "cd ..";
-          "..." = "cd ../..";
+          ".." = "z ..";
+          "..." = "z ../..";
 
           # Utility
           "c" = "clear";
@@ -90,6 +90,8 @@ in {
 
           # Overwrites
           "cat" = "bat";
+          "ls" = "lsd";
+          "cd" = "z";
         }
         // cfg.shellAliases;
     };
