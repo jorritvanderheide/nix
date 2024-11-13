@@ -62,7 +62,7 @@
 
     # Set used bindings
     "org/gnome/desktop/wm/keybindings" = {
-      close = ["<Alt>AudioPrev"];
+      close = ["<Super>q"];
       move-to-center = ["<Super>Space"];
       move-to-monitor-left = ["<Super><Alt>Left"];
       move-to-monitor-right = ["<Super><Alt>Right"];
