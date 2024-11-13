@@ -4,6 +4,10 @@
     xh
     lazygit
     lsd
-    zoxide
   ];
+
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
+  };
 }
