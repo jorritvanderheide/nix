@@ -6,6 +6,7 @@
   # Eclude packages from Gnome
   environment.gnome.excludePackages = with pkgs; [
     baobab
+    epiphany
     geary
     gnome-calendar
     gnome-characters

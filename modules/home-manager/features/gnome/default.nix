@@ -28,6 +28,7 @@ in {
         blackbox-terminal
       ]
       ++ [
+        gnomeExtensions.alphabetical-app-grid
         gnomeExtensions.appindicator
         gnomeExtensions.blur-my-shell
         gnomeExtensions.burn-my-windows
@@ -116,8 +117,9 @@ in {
       };
 
       "org/gnome/shell" = {
-        welcome-dialog-last-shown-version = "46.2";
+        welcome-dialog-last-shown-version = "47.0";
         enabled-extensions = [
+          "AlphabeticalAppGrid@stuarthayhurst"
           "appindicatorsupport@rgcjonas.gmail.com"
           "blur-my-shell@aunetx"
           "burn-my-windows@schneegans.github.com"
