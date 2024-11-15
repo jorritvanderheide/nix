@@ -34,6 +34,7 @@ in {
         gnomeExtensions.burn-my-windows
         gnomeExtensions.caffeine
         gnomeExtensions.clipboard-indicator
+        gnomeExtensions.color-picker
         gnomeExtensions.dash-to-dock
         gnomeExtensions.impatience
         gnomeExtensions.mpris-label
@@ -125,6 +126,7 @@ in {
           "burn-my-windows@schneegans.github.com"
           "caffeine@patapon.info"
           "clipboard-indicator@tudmotu.com"
+          "color-picker@tuberry"
           "dash-to-dock@micxgx.gmail.com"
           "impatience@gfxmonk.net"
           "mprisLabel@moon-0xff.github.com"
@@ -154,7 +156,16 @@ in {
       };
 
       "org/gnome/shell/extensions/clipboard-indicator" = {
-        display-mode = 3;
+        display-mode = lib.hm.gvariant.mkUint32 3;
+      };
+
+      "org/gnome/shell/extensions/color-picker" = {
+        color-picker-shortcut = ["<Super><Shift>c"];
+        default-format = lib.hm.gvariant.mkUint32 0;
+        enable-format = true;
+        enable-shortcut = true;
+        enable-sound = false;
+        enable-systray = false;
       };
 
       "org/gnome/shell/extensions/dash-to-dock" = {
