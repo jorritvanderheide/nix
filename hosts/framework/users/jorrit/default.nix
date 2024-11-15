@@ -67,11 +67,17 @@
     vscode = {
       enable = true;
       extensions = with pkgs.vscode-extensions; [
+        esbenp.prettier-vscode
         eamodio.gitlens
         github.copilot
         github.copilot-chat
         zhuangtongfa.material-theme
       ];
+      userSettings = {
+        "[typescriptreact]" = {
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        };
+      };
     };
   };
 }
