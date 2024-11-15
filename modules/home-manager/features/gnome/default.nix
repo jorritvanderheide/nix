@@ -156,7 +156,7 @@ in {
       };
 
       "org/gnome/shell/extensions/clipboard-indicator" = {
-        display-mode = lib.hm.gvariant.mkUint32 3;
+        display-mode = 3;
       };
 
       "org/gnome/shell/extensions/color-picker" = {
