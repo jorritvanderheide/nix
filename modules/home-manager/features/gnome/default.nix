@@ -200,7 +200,9 @@ in {
         use-activities-text = false;
       };
 
-      "org/gtk/gtk4/settings/file-chooser/show-directories-first" = false;
+      "org/gtk/gtk4/settings/file-chooser/" = {
+        show-directories-first = false;
+      };
 
       # Other dconf apps
       "com/raggesilver/BlackBox" = {
