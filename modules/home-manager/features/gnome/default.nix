@@ -46,7 +46,6 @@ in {
     myHomeManager.impermanence = {
       directories = [
         ".config/burn-my-windows"
-        ".config/nautilus"
       ];
       files = [
         ".config/monitors.xml"
@@ -200,6 +199,8 @@ in {
         show-window-buttons = "never";
         use-activities-text = false;
       };
+
+      "org/gtk/gtk4/settings/file-chooser/show-directories-first" = false;
 
       # Other dconf apps
       "com/raggesilver/BlackBox" = {
