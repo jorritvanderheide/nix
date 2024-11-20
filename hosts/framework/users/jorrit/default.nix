@@ -37,8 +37,8 @@
     direnv.enable = true;
     discord.enable = true;
     fish.enable = true;
-    gnome.enable = true;
     # hyprland.enable = true;
+    kicad.enable = true;
     obsidian.enable = true;
     pinta.enable = true;
     postman.enable = true;
@@ -51,6 +51,15 @@
       enable = true;
       userName = "jorrit";
       userEmail = "35707261+jorritvanderheide@users.noreply.github.com";
+    };
+
+    ### Gnome
+    gnome = {
+      enable = true;
+      backgroundPaths = {
+        light = "file://${builtins.toPath ./backgrounds/light.jpg}";
+        dark = "file://${builtins.toPath ./backgrounds/dark.jpg}";
+      };
     };
 
     ### Impermanence
@@ -67,8 +76,8 @@
     vscode = {
       enable = true;
       extensions = with pkgs.vscode-extensions; [
-        esbenp.prettier-vscode
         eamodio.gitlens
+        esbenp.prettier-vscode
         github.copilot
         github.copilot-chat
         zhuangtongfa.material-theme
