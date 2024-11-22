@@ -51,7 +51,6 @@ in {
     docker.enable = true;
     gnome.enable = true;
     grub.enable = true;
-    # hyprland.enable = true;
     impermanence.enable = true;
     logitech.enable = true;
     package-list.enable = true;
