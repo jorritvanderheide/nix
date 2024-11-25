@@ -17,6 +17,7 @@
     ## Fonts
     cascadia-code
     inter
+    jetbrains-mono
 
     ## CLI
     figlet
@@ -29,7 +30,6 @@
   myHomeManager = {
     ## Bundles
     bundles.cli.enable = true;
-    # bundles.meshtastic.enable = true;
 
     ## Features
     brave.enable = true;
@@ -37,7 +37,6 @@
     direnv.enable = true;
     discord.enable = true;
     fish.enable = true;
-    # hyprland.enable = true;
     kicad.enable = true;
     obsidian.enable = true;
     pinta.enable = true;
