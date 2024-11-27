@@ -65,7 +65,7 @@ in {
           "nboot" = "sudo nixos-rebuild boot --flake /etc/nixos#$(hostname)";
           "nrollback" = "sudo nixos-rebuild switch --rollback";
           "nclean" = "nix-collect-garbage -d";
-          "nupdate" = "nix flake update";
+          "nupdate" = "nix flake update --flake /etc/nixos";
           "nshell" = "nix-shell -p";
           "ndev" = "nix develop";
           "nedit" = "code /etc/nixos";

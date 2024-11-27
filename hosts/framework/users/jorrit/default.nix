@@ -17,7 +17,6 @@
     ## Fonts
     cascadia-code
     inter
-    jetbrains-mono
 
     ## CLI
     figlet
@@ -30,6 +29,7 @@
   myHomeManager = {
     ## Bundles
     bundles.cli.enable = true;
+    bundles.jetbrains.enable = true;
 
     ## Features
     brave.enable = true;
