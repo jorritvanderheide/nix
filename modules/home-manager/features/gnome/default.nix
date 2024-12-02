@@ -48,7 +48,7 @@ in {
         ".config/burn-my-windows"
       ];
       files = [
-        ".config/monitors.xml"
+        ".config/gnome-initial-setup-done"
       ];
     };
 
