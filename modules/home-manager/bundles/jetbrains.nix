@@ -1,10 +1,11 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     jetbrains-mono
-    jetbrains-toolbox
+    jetbrains.idea-community
   ];
 
   myHomeManager.impermanence.directories = [
-    ".config/jetbrains"
+    ".config/JetBrains"
+    ".local/share/JetBrains"
   ];
 }
