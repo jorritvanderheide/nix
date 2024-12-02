@@ -7,4 +7,8 @@
 
     fish.enable = true;
   };
+
+  myHomeManager.impermanence.directories = [
+    ".local/share/direnv"
+  ];
 }
