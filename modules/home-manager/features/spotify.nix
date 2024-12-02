@@ -4,6 +4,7 @@
   ];
 
   myHomeManager.impermanence.directories = [
+    ".cache/spotify"
     ".config/spotify"
   ];
 }
