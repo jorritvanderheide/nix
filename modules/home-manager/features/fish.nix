@@ -89,7 +89,6 @@ in {
           "gb" = "git branch";
 
           # Overwrites
-          "cat" = "bat";
           "ls" = "lsd";
           "cd" = "z";
         }
