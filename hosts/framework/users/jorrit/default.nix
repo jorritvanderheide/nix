@@ -36,6 +36,7 @@
     dbeaver.enable = true;
     direnv.enable = true;
     discord.enable = true;
+    element.enable = true;
     fish.enable = true;
     kicad.enable = true;
     obsidian.enable = true;
@@ -56,8 +57,8 @@
     gnome = {
       enable = true;
       backgroundPaths = {
-        light = "file://${builtins.toPath ./backgrounds/light.png}";
-        dark = "file://${builtins.toPath ./backgrounds/dark.png}";
+        light = "file://${builtins.toPath ./backgrounds/light.jpg}";
+        dark = "file://${builtins.toPath ./backgrounds/dark.jpg}";
       };
     };
 
