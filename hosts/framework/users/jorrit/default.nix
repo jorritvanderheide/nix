@@ -45,6 +45,7 @@
     signal.enable = true;
     spotify.enable = true;
     teams.enable = true;
+    torrential.enable = true;
 
     ### Git
     git = {
