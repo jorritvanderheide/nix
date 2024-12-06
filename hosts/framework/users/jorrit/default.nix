@@ -46,6 +46,7 @@
     signal.enable = true;
     spotify.enable = true;
     teams.enable = true;
+    vlc.enable = true;
 
     ### Git
     git = {
