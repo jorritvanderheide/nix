@@ -42,10 +42,10 @@
     obsidian.enable = true;
     pinta.enable = true;
     postman.enable = true;
+    qbittorrent.enable = true;
     signal.enable = true;
     spotify.enable = true;
     teams.enable = true;
-    torrential.enable = true;
 
     ### Git
     git = {
