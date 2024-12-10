@@ -33,6 +33,7 @@ in {
   # myNixOS config
   myNixOS = {
     ## Bundles
+    bundles.nix.enable = true;
     bundles.desktop.enable = true;
 
     ### Users

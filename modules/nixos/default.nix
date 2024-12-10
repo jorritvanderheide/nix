@@ -36,17 +36,4 @@ in {
     ]
     ++ features
     ++ bundles;
-
-  # Nix
-  nix = {
-    nixPath = ["nixpkgs=${inputs.nixpkgs}"];
-    settings = {
-      auto-optimise-store = true;
-      experimental-features = ["flakes" "nix-command"];
-      warn-dirty = false;
-    };
-  };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 }
