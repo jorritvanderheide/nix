@@ -20,9 +20,6 @@
 
     ## CLI
     figlet
-
-    ## Other
-    android-tools
   ];
 
   # myHomeManager config
@@ -34,12 +31,14 @@
     ## Features
     brave.enable = true;
     dbeaver.enable = true;
+    devenv.enable = true;
     direnv.enable = true;
     discord.enable = true;
     element.enable = true;
     fish.enable = true;
     kicad.enable = true;
     obsidian.enable = true;
+    pdf.enable = true;
     pinta.enable = true;
     postman.enable = true;
     qbittorrent.enable = true;

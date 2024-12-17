@@ -33,6 +33,7 @@ in {
   # myNixOS config
   myNixOS = {
     ## Bundles
+    bundles.android.enable = true;
     bundles.nix.enable = true;
     bundles.desktop.enable = true;
 
@@ -42,7 +43,7 @@ in {
       "jorrit" = {
         userConfig = ./users/jorrit;
         userSettings = {
-          extraGroups = ["dialout" "docker" "networkmanager" "persist" "wheel"];
+          extraGroups = ["adbusers" "dialout" "docker" "networkmanager" "persist" "plugdev" "wheel"];
           hashedPasswordFile = config.age.secrets.jorrit.path;
         };
       };
