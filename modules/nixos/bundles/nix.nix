@@ -1,6 +1,9 @@
 {inputs, ...}: {
   # Nix
   nix = {
+    extraOptions = ''
+      trusted-users = root jorrit
+    '';
     nixPath = ["nixpkgs=${inputs.nixpkgs}"];
     settings = {
       auto-optimise-store = true;
