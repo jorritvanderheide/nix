@@ -27,6 +27,7 @@
     ## Bundles
     bundles.cli.enable = true;
     bundles.jetbrains.enable = true;
+    bundles.printing.enable = true;
 
     ## Features
     brave.enable = true;
